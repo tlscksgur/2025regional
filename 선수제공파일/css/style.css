@@ -1,0 +1,10 @@
+*{margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; color: inherit;}
+
+@font-face {
+  font-family: font;
+  src: url("/선수제공파일/font/fontawesome-webfont.ttf");
+}
+
+.container{
+  font-family: font;
+}
