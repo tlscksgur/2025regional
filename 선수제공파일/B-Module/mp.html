@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    // 동영상 컨테이너 생성
+    const videoContainer = document.createElement("div");
+    videoContainer.style.position = "relative";
+    videoContainer.style.width = "100%";
+    videoContainer.style.maxWidth = "800px";
+    videoContainer.style.margin = "0 auto";
+    videoContainer.style.padding = "10px";
+    videoContainer.style.boxShadow = "0px 4px 10px rgba(0, 0, 0, 0.3)";
+    videoContainer.style.borderRadius = "10px";
+    videoContainer.style.overflow = "hidden";
+
+    // 동영상 요소 생성
+    const video = document.createElement("video");
+    video.src = "AD.mp4";
+    video.controls = false;  // 기본 컨트롤러 숨김
+    video.style.width = "100%";
+    video.style.borderRadius = "10px";
+    
+    // 컨트롤러 UI 생성
+    const controls = document.createElement("div");
+    controls.style.position = "absolute";
+    controls.style.bottom = "10px";
+    controls.style.left = "50%";
+    controls.style.transform = "translateX(-50%)";
+    controls.style.display = "flex";
+    controls.style.gap = "10px";
+    controls.style.background = "rgba(0, 0, 0, 0.7)";
+    controls.style.padding = "10px";
+    controls.style.borderRadius = "5px";
+    controls.style.transition = "opacity 0.3s";
+    controls.style.opacity = "1"; // 초기 표시
+
+    // 컨트롤러 버튼 데이터
+    const buttons = [
+        { text: "▶️", action: () => video.play() },
+        { text: "⏸", action: () => video.pause() },
+        { text: "⏹", action: () => { video.pause(); video.currentTime = 0; } },
+        { text: "⏪ 10s", action: () => { video.currentTime -= 10; } },
+        { text: "⏩ 10s", action: () => { video.currentTime += 10; } },
+        { text: "🔽 x0.1", action: () => { video.playbackRate = Math.max(0.1, video.playbackRate - 0.1); } },
+        { text: "🔼 x0.1", action: () => { video.playbackRate += 0.1; } },
+        { text: "⏩ 1x", action: () => { video.playbackRate = 1; } },
+        { text: "👁‍🗨", action: () => { controls.style.opacity = controls.style.opacity === "1" ? "0" : "1"; } },
+        { text: "🔄", action: () => { video.loop = !video.loop; alert("반복: " + (video.loop ? "켜짐" : "꺼짐")); } },
+        { text: "▶️⏩", action: () => { video.autoplay = !video.autoplay; alert("자동재생: " + (video.autoplay ? "켜짐" : "꺼짐")); } }
+    ];
+
+    // 버튼 생성 및 추가
+    buttons.forEach(({ text, action }) => {
+        const btn = document.createElement("button");
+        btn.textContent = text;
+        btn.style.padding = "5px";
+        btn.style.border = "none";
+        btn.style.cursor = "pointer";
+        btn.style.fontSize = "14px";
+        btn.style.borderRadius = "3px";
+        btn.style.background = "#fff";
+        btn.style.color = "#000";
+        btn.style.fontWeight = "bold";
+        btn.addEventListener("click", action);
+        controls.appendChild(btn);
+    });
+
+    // 컨테이너에 요소 추가
+    videoContainer.appendChild(video);
+    videoContainer.appendChild(controls);
+    document.body.insertBefore(videoContainer, document.body.firstChild);
+});
+
+  </script>
+</body>
+</html>
