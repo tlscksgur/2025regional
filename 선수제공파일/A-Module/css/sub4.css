@@ -40,26 +40,11 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 .ul2 li:nth-child(4):hover{color: rgb(20, 255, 224);}
 
 
-section{width: 100%; height: 2600px; padding-top: 70px;}
-
-.all-product{display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 20px; gap: 20px; width: 100%; height: 100%; margin-top: 0px;}
-.all-product > ul{display: flex; flex-direction: column;  padding: 20px;
-width: 360px; height: 500px; border: 1px solid; border-radius: 10px; box-shadow: 2px 3px 5px 0px gray;}
-
-.all-product ul li{border-bottom: 1px solid #b6b6b6; line-height: 25px;}
-
-.all-product ul li:first-child{font-weight: bold; font-size: 20px; color: #0078ff; padding-bottom: 5px;}
-.all-product ul li:nth-child(3){border-top: 1px solid #b6b6b6; padding: 5px; line-height: 20px; text-align: justify;}
-.all-product ul li:last-child{border-bottom: none;}
-
-.product-img{width: 200px; margin-left: 55px; border-radius: 20px;}
-
-.video-box{display: flex; justify-content: center; align-items: center; width: 100%; height: 700px;}
-.video-box video{width: 1050px;}
+section{width: 100%; height: 800px;}
 
 
 
-footer{width: 1920px; margin-top: 800px; padding: 40px;
+footer{width: 1920px; margin-top: 50px; padding: 40px;
 background: linear-gradient(rgba(255, 68, 0, 0.418),rgba(250, 109, 109, 0.699), rgb(255, 156, 173));
 box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418);}
 .footer-in{width: 1100px; margin: 0 auto;}

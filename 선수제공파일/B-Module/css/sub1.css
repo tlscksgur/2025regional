@@ -31,15 +31,17 @@ section { width: 100%; }
 .section-in { margin-top: 50px; }
 
 .indroduce { display: flex; align-items: center; justify-content: space-between; }
-.intro-flex { width: 1400px; margin: 0 auto; }
+.intro-flex { width: 1300px; margin: 0 auto; }
 
 .indroduce li { width: 250px; height: 600px; background-size: 1250px; }
-
 .indroduce > li:nth-child(1) { background-image: url(/2025regional-main/선수제공파일/B-Module/B-ModuleImg/img01.jpg); background-position: 0px; }
 .indroduce > li:nth-child(2) { background-image: url(/2025regional-main/선수제공파일/B-Module/B-ModuleImg/img02.jpg); background-position: -250px; }
 .indroduce > li:nth-child(3) { background-image: url(/2025regional-main/선수제공파일/B-Module/B-ModuleImg/img03.jpg); background-position: -500px; }
 .indroduce > li:nth-child(4) { background-image: url(/2025regional-main/선수제공파일/B-Module/B-ModuleImg/img04.jpg); background-position: -750px; }
 .indroduce > li:nth-child(5) { background-image: url(/2025regional-main/선수제공파일/B-Module/B-ModuleImg/img05.jpg); background-position: -1000px; }
+
+.indroduce p{color: #ff5722; font-size: 22px; font-weight: bold; margin: 555px 0px 0px 20px;}
+
 
 footer { width: 1920px; margin-top: 50px; padding: 40px; background: linear-gradient(rgba(255, 68, 0, 0.418), rgba(250, 109, 109, 0.699), rgb(255, 156, 173)); box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418); }
 .footer-in { width: 1100px; margin: 0 auto; }

@@ -10,12 +10,17 @@
   <header>
     <div class="header-in">
       <div class="header-logo"><a href="index.html"><img src="./img/slideImg/logo.png" alt="header-logo"></a></div>
-      <ul class="ul1">
-        <li><a href="sub1.html">소개</a></li>
-        <li><a href="sub2.html">전체상품</a></li>
-        <li><a href="#">가맹점</a></li>
-        <li><a href="#">장바구니</a></li>
-      </ul>
+      <div class="ul1">
+        <div class="maindrop"><a href="../B-Module/sub1.html">소개</a></div>
+          <div class="drop"><a href="#">판매상품</a>
+            <ul class="drophover">
+              <li><a href="sub2.html">전체상품</a></li>
+              <li><a href="sub3.html">인기상품</a></li>
+            </ul>
+        </div>
+        <div><a href="#">가맹점</a></div>
+        <div><a href="sub4.html">장바구니</a></div>
+      </div>
       <ul class="ul2">
         <li><a href="#">로그인</a></li>
         <li><a href="#">회원가입</a></li>
@@ -26,6 +31,21 @@
   </header>
 
   <section>
+    <div class="video-box">
+      <video src="../B-Module/AD.mp4"></video>
+
+      <div class="video-ctl">
+        <button id="play">▶</button>
+        <button id="pause">⏸</button>
+        <button id="stop">⏹</button>
+        <button id="back">⏪</button>
+        <button id="fast">⏩</button>
+        <button id="speedDown">🐢</button>
+        <button id="speedUp">🐇</button>
+        <button id="reset">🔄</button>
+        <button id="repeat">🔁</button>
+      </div>
+    </div>
     <div class="all-product">
       <ul>
         <li></li>
@@ -102,5 +122,6 @@
   </div>
 </footer>
 <script src="./js/script.js"></script>
+<script src="../B-Module/js/script.js"></script>
 </body>
 </html>
