@@ -1,0 +1,111 @@
+*{scrollbar-width: none; margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none; color: inherit;}
+dialog{all: unset;}
+
+@font-face {
+  font-family: font;
+  src: url("/2025regional-main/선수제공파일/B-Module/font/fontawesome-webfont.ttf");
+}
+
+.container{
+  font-family: font;
+}
+
+header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562); width: 100%;}
+.header-logo img{width: 140px;}
+.header-in{width: 100%; height: 90px; display: flex; justify-content: space-around; align-items: center;}
+
+.drophover{position: absolute; height: 0; overflow: hidden; width: 70px;  text-align: center; line-height: 40px; background-color: rgba(128, 128, 128, 0.411);  transition: .3s;}
+.drop:hover .drophover{height: 85px;}
+
+.ul1{width: 350px; display: flex; justify-content: space-between;}
+.ul2{width: 300px; display: flex; justify-content: space-between;}
+
+.ul1 li{color: #fff;}
+.ul2 li{color: #fff;}
+
+.ul1 li{transition: .2s;}
+.ul1 li:nth-child(1):hover{color: orangered;}
+.ul1 li:nth-child(2):hover{color: orangered;}
+.ul1 li:nth-child(3):hover{color: orangered;}
+.ul1 li:nth-child(4):hover{color: orangered;}
+
+.ul2 li{transition: .2s;}
+.ul2 li:nth-child(1){width: 60px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
+.ul2 li:nth-child(2){width: 70px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
+.ul2 li:nth-child(3){width: 70px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
+.ul2 li:nth-child(4){width: 60px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
+
+.ul2 li:nth-child(1):hover{color: gold;}
+.ul2 li:nth-child(2):hover{color: rgb(119, 247, 69);}
+.ul2 li:nth-child(3):hover{color: rgba(60, 60, 241, 0.884);}
+.ul2 li:nth-child(4):hover{color: rgb(20, 255, 224);}
+
+
+section{width: 100%; height: 2670px; padding-top: 70px; font-family: font;}
+
+.all-product{display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 20px; gap: 20px; width: 100%; height: 100%; margin-top: 0px;}
+.all-product > ul{display: flex; flex-direction: column;  padding: 20px;
+width: 360px; height: 500px; border: 1px solid; border-radius: 10px; box-shadow: 2px 3px 5px 0px gray;}
+
+.all-product ul li{border-bottom: 1px solid #b6b6b6; line-height: 25px;}
+
+.all-product ul li:first-child{font-weight: bold; font-size: 20px; color: #0078ff; padding-bottom: 5px;}
+.all-product ul li:nth-child(3){border-top: 1px solid #b6b6b6; padding: 5px; line-height: 20px; text-align: justify;}
+.all-product ul li:nth-child(6){border-bottom: none;}
+.all-product ul li:last-child{border-bottom: none;}
+
+.product-img{width: 200px; margin-left: 55px; border-radius: 20px;}
+
+.video-box{position: relative; display: flex; justify-content: center; align-items: center;
+width: 100%; height: 700px;}
+.video-box video{width: 1050px; box-shadow: -1px 0px 7px 1px rgba(0, 0, 0, 0.479);}
+
+.video-ctl{position: absolute; bottom: 70px;}
+
+.all-product > ul li{padding-top: 10px;}
+
+.all-product > ul li:nth-child(6){display: flex; justify-content: space-between; align-items: end;  width: 210px; height: 100px;}
+/* .all-product > ul li:nth-child(7){cursor: pointer; border-radius: 50%;}  plus 버튼 넣을지 말지 고민 */
+.buy-btn{width: 100px; height: 45px; background-color: #429aff; border-radius: 5px; color: #fff; font-size: 15px; font-weight: bold; cursor: pointer;}
+.cart-btn{width: 100px; height: 45px; background-color: #429aff; border-radius: 5px; color: #fff; font-size: 15px; font-weight: bold; cursor: pointer;}
+
+
+
+
+footer{width: 1920px; margin-top: 800px; padding: 40px;
+background: linear-gradient(rgba(255, 68, 0, 0.418),rgba(250, 109, 109, 0.699), rgb(255, 156, 173));
+box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418);}
+.footer-in{width: 1100px; margin: 0 auto;}
+
+.footer-logo img{width: 140px;}
+
+.number{line-height: 25px; color: #2E1A00;}
+
+.footer-content1{display: flex; justify-content: space-between; padding: 10px;}
+
+.footer-content2{width: 1100px; border-top: 1px solid rgba(250, 91, 51, 0.397); border-bottom: 1px solid rgba(250, 91, 51, 0.397);}
+.footer-txt1{color: #2E1A00;}
+.footer-txt2{display: flex; justify-content: center; margin: 15px 0 15px 0; color: #2E1A00;}
+
+.footer-content3{display: flex;}
+.footer-content3 > ul li{line-height: 27px;}
+
+.footer-content4{display: flex;}
+
+.footer-link{display: flex; width: 1000px;}
+.footer-link ul{display: flex; justify-content: space-between; align-items: center; width: 800px; height: 80px;}
+.footer-link > ul li{transition: .2s;}
+.footer-link > ul li:hover{color: gold;}
+
+.footer-sns ul{display: flex; justify-content: space-between; align-items: center; width: 150px; height: 80px;}
+
+.copyright{text-align: center; border-top: 1px solid rgba(250, 91, 51, 0.397); padding-top: 15px;}
+
+
+/* ---------모달-------- */
+
+dialog{position: fixed; display: none; inset: 0; width: 100%; height: 100%; background-color: rgba(128, 128, 128, 0.452);}
+.modal-box{ margin: 5% auto;width: 1300px; height: 770px; background-color: #278cff; z-index: 1000;}
+.no-member-btn{width: 100px; height: 45px; margin: 20px auto; /* margin-top: 20px; margin-left: 1400px; */}
+.open{width: 140px; height: 50px;}
+.close{display: inline-block; width: 30px; height: 30px; font-size: 35px; font-weight: bold; cursor: pointer;}
