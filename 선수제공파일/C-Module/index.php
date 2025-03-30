@@ -18,40 +18,48 @@
       <div class="header-in">
         <div class="header-logo"><a href="index.php"><img src="./img/slideImg/logo.png" alt="header-logo"></a></div>
         <div class="ul1">
-          <div class="maindrop"><a href="./sub1.html">소개</a></div>
+          <div class="maindrop"><a href="./sub1.php">소개</a></div>
           <div class="drop"><a href="#">판매상품</a>
             <ul class="drophover">
-              <li><a href="./sub2.html">전체상품</a></li>
-              <li><a href="./sub3.html">인기상품</a></li>
+              <li><a href="./sub2.php">전체상품</a></li>
+              <li><a href="./sub3.php">인기상품</a></li>
             </ul>
           </div>
           <div><a href="#">가맹점</a></div>
-          <div><a href="./sub4.html">장바구니</a></div>
+          <div><a href="./sub4.php">장바구니</a></div>
         </div>
-        <?php session_start() ?>
-        <ul class="ul2">
-          <?php if($_SESSION['ss'] ?? false): ?>
-            <li><?php echo $_SESSION['ss']->id ?>님</li>
-            <li><a href="logout.php">로그아웃</a></li>
-            <li><a href="joinshow.php">회원가입</a></li>
-          <?php else: ?>
-            <li><a href="loginshow.php">로그인</a></li>
-            <li><a href="joinshow.php">회원가입</a></li>
-          <?php endif; ?>
-            <li><a href="#">장바구니</a></li>
-            <li><a href="adminlogin.php">관리자</a></li>
-        </ul>
-        <?php if($_SESSION['ad'] ?? false): ?>
-          <div class="adminFn">
-            <div class="adbox">
-              <p>관리자</p>
-              <ul>
-                <li>공지사항관리</li>
-                <li>판매상품관리</li>
+        <div class="php-flex">
+          <?php session_start() ?>
+          <ul class="ul2">
+            <?php if((isset($_SESSION['ss']) && $_SESSION['ss']) || (isset($_SESSION['ad']) && $_SESSION['ad'])): ?>
+              <li>
+                <?php if (isset($_SESSION['ss']) && $_SESSION['ss']): ?>
+                    <?php echo $_SESSION['ss']->id . "님" ?>
+                <?php elseif (isset($_SESSION['ad']) && $_SESSION['ad']): ?>
+                    <?php echo "관리자님" ?>
+                <?php endif; ?>
+              </li>
+              <li><a href="logout.php">로그아웃</a></li>
+              <li><a href="joinshow.php">회원가입</a></li>
+            <?php else: ?>
+              <li><a href="loginshow.php">로그인</a></li>
+              <li><a href="joinshow.php">회원가입</a></li>
+            <?php endif; ?>
+              <li><a href="#">장바구니</a></li>
+              <?php if(isset($_SESSION['ad']) && $_SESSION['ad']): ?>
+                <input type="checkbox" class="adbtn" id="admii" hidden>
+                <label for="admii" class="adlabel">관리자</label>
+              <ul class="adcheck">
+                <li><a href="#">공지사항관리</a></li>
+                <li><a href="#">판매상품관리</a></li>
               </ul>
-            </div>
-          </div>
-        <?php endif;?>
+                <?php elseif (isset($_SESSION['ss']) && $_SESSION['ss']):?>
+                  <li><a href="#">관리자</a></li>
+              <?php else: ?>
+                <li><a href="adminlogin.php">관리자</a></li>
+              <?php endif; ?>
+          </ul>
+        </div>
       </div>
     </header>
     <section class="sldie-section">
@@ -84,11 +92,11 @@
     <section class="product-section">
       <div class="label-all">
         <p class="product-title">product</p>
-        <label for="list1">건강식품</label>
-        <label for="list2">디지털</label>
-        <label for="list3">팬시</label>
-        <label for="list4">헤어케어</label>
-        <label for="list5">향수</label>
+        <label for="list1" class="product-label">건강식품</label>
+        <label for="list2" class="product-label">디지털</label>
+        <label for="list3" class="product-label">팬시</label>
+        <label for="list4" class="product-label">헤어케어</label>
+        <label for="list5" class="product-label">향수</label>
       </div>
 
       <!-- 건강 카테고리 -->

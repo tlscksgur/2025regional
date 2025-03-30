@@ -5,33 +5,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/sub1.css">
-  <link rel="stylesheet" href="font/font-awesome.min.css">
   <title>소개</title>
 </head>
 
 <body>
-  <header>
-    <div class="header-in">
-      <div class="header-logo"><a href="./index.html"><img src="../C-Module/img/slideImg/logo.png" alt="header-logo"></a></div>
-      <div class="ul1">
-        <div class="maindrop"><a href="./sub2.html">소개</a></div>
-        <div class="drop"><a href="#">판매상품</a>
-          <ul class="drophover">
-            <li><a href="./sub3.html">전체상품</a></li>
-            <li><a href="sub4.html">인기상품</a></li>
-          </ul>
+<header>
+      <div class="header-in">
+        <div class="header-logo"><a href="index.php"><img src="./img/slideImg/logo.png" alt="header-logo"></a></div>
+        <div class="ul1">
+          <div class="maindrop"><a href="./sub1.php">소개</a></div>
+          <div class="drop"><a href="#">판매상품</a>
+            <ul class="drophover">
+              <li><a href="./sub2.php">전체상품</a></li>
+              <li><a href="./sub3.php">인기상품</a></li>
+            </ul>
+          </div>
+          <div><a href="#">가맹점</a></div>
+          <div><a href="./sub4.php">장바구니</a></div>
         </div>
-        <div><a href="#">가맹점</a></div>
-        <div><a href="./sub4.html">장바구니</a></div>
+        <div class="php-flex">
+          <?php session_start() ?>
+          <ul class="ul2">
+            <?php if((isset($_SESSION['ss']) && $_SESSION['ss']) || (isset($_SESSION['ad']) && $_SESSION['ad'])): ?>
+              <li>
+                <?php if (isset($_SESSION['ss']) && $_SESSION['ss']): ?>
+                    <?php echo $_SESSION['ss']->id . "님" ?>
+                <?php elseif (isset($_SESSION['ad']) && $_SESSION['ad']): ?>
+                    <?php echo "관리자님" ?>
+                <?php endif; ?>
+              </li>
+              <li><a href="logout.php">로그아웃</a></li>
+              <li><a href="joinshow.php">회원가입</a></li>
+            <?php else: ?>
+              <li><a href="loginshow.php">로그인</a></li>
+              <li><a href="joinshow.php">회원가입</a></li>
+            <?php endif; ?>
+              <li><a href="#">장바구니</a></li>
+              <?php if(isset($_SESSION['ad']) && $_SESSION['ad']): ?>
+                <input type="checkbox" class="adbtn" id="admii" hidden>
+                <label for="admii" class="adlabel">관리자</label>
+              <ul class="adcheck">
+                <li><a href="#">공지사항관리</a></li>
+                <li><a href="#">판매상품관리</a></li>
+              </ul>
+                <?php elseif (isset($_SESSION['ss']) && $_SESSION['ss']):?>
+                  <li><a href="#">관리자</a></li>
+              <?php else: ?>
+                <li><a href="adminlogin.php">관리자</a></li>
+              <?php endif; ?>
+          </ul>
+          
+        </div>
       </div>
-      <ul class="ul2">
-        <li><a href="#">로그인</a></li>
-        <li><a href="#">회원가입</a></li>
-        <li><a href="#">장바구니</a></li>
-        <li><a href="#">관리자</a></li>
-      </ul>
-    </div>
-  </header>
+    </header>
 
   <section>
     <div class="section-in">
@@ -49,7 +75,7 @@
 
   <footer>
     <div class="footer-in">
-      <div class="footer-logo"><img src="../A-Module/img/slideImg/logo.png" alt="footer-logo">
+      <div class="footer-logo"><img src="./img/slideImg/logo.png" alt="footer-logo">
         <p class="footer-logo-txt"></p>
       </div>
       <div class="footer-content1">

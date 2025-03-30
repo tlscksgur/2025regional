@@ -2,7 +2,6 @@
 session_start();
 session_destroy();
 
-var_dump($_SESSION);
-// echo  "<script>location.href='/'</script>";
-header("Location: /");
-
+echo "<script>location.href='/'</script>";
+//var_dump($_SESSION);
+// header("Location: /");

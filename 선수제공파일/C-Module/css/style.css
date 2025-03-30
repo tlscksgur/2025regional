@@ -5,10 +5,10 @@
 
 @font-face {
   font-family: font;
-  src: url("/2025regional-main/선수제공파일/A-Module/font/fontawesome-webfont.ttf");
+  src: url("/2025regional/선수제공파일/공통/fontawesome/fonts/fontawesome-webfont.ttf");
 }
 
-.container{
+.body{
   font-family: font;
 }
 
@@ -23,10 +23,10 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 .ul1 a{transition: .2s;}
 .ul1 a:hover{color: #ff4500;}
 .ul1{width: 350px; display: flex; justify-content: space-between;}
-.ul2{width: 360px; display: flex; justify-content: space-between;}
+.ul2{width: auto; display: flex; justify-content: space-between; align-items: center;}
 
 .ul1 li{color: #fff;}
-.ul2 li{color: #fff;}
+.ul2 li{color: #fff; margin-left: 10px;}
 
 .ul1 li{transition: .2s;}
 .ul1 li:nth-child(1):hover{color: orangered;}
@@ -47,6 +47,16 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 .ul2 li:nth-child(4):hover{color: rgb(20, 255, 224);}
 .ul2 li:nth-child(5):hover{color: gold;}
 
+.adcheck{display: block; width: 0px; height: 0px; overflow: hidden; transition: .3s;}
+.adcheck li:nth-child(1){width: 100px; height: 30px; background-color: cadetblue;}
+.adcheck li:nth-child(2){width: 100px; height: 30px; background-color: cadetblue;}
+
+.adbtn:checked ~ .adcheck{width: 120px; height: 60px;}
+.adbtn:checked ~ .adlabel{background-color: #24cafc;}
+.adlabel:hover{background-color: #24cafc;}
+
+.adlabel{width: 75px; height: 35px; background-color: gold; text-align: center; line-height: 35px;
+border-radius: 8px; margin-left: 5px; cursor: pointer; transition: .2s;}
 /* -----------헤더------------ */
 
 .slide{width: 100%; overflow: hidden;}
@@ -108,8 +118,8 @@ h1{width: 90%; text-align: center;}
 
 .label-all{margin-left: 200px;}
 
-label{display: inline-block; width: 70px; height: 32px; border-radius: 5px; background-color: lightcoral; margin-top: 30px; text-align: center; line-height: 30px; transition: .3s; font-weight: bold; color:#fff;}
-label:hover{cursor: pointer; background-color: rgb(250, 90, 90);}
+.product-label{display: inline-block; width: 70px; height: 32px; border-radius: 5px; background-color: lightcoral; margin-top: 30px; text-align: center; line-height: 30px; transition: .3s; font-weight: bold; color:#fff;}
+.product-label:hover{cursor: pointer; background-color: rgb(250, 90, 90);}
 
 /* ----------판매상품 체크------------- */
 .product-title{font-size: 40px; font-weight: bold;}
@@ -267,8 +277,3 @@ z-index: 100; animation: back 3s forwards; transition: 2s; }
 
 
 /* --------php-------- */
-
-.adminFn{display: flex; width: 300px; height: 25px; border: 1px solid;}
-.adbox{display: flex; justify-content: space-between; width: 250px;}
-.adbox ul{display: flex; width: 300px; height: 20px;}
-.adbox p{display: inline-block;}

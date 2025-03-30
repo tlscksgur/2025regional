@@ -11,8 +11,8 @@ require_once "db.php"
 </head>
 <body>
   <form action="admin.php" method="post">
-    <input type="text" placeholder="AdminId" autofocus required>
-    <input type="password" placeholder="AdminPw" required>
+    <input type="text" placeholder="Adminid" autofocus required>
+    <input type="password" placeholder="Adminpw" required>
 
     <button type="submit">관리자 로그인하기</button>
   </form>

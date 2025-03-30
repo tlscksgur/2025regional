@@ -20,9 +20,7 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 .drophover{position: absolute; height: 0; overflow: hidden; width: 70px;  text-align: center; line-height: 40px; background-color: rgba(128, 128, 128, 0.411);  transition: .3s;}
 .drop:hover .drophover{height: 85px;}
 
-.ul1 a{transition: .2
-  
-  s;}
+.ul1 a{transition: .2s;}
 .ul1 a:hover{color: #ff4500;}
 .ul1{width: 350px; display: flex; justify-content: space-between;}
 .ul2{width: 300px; display: flex; justify-content: space-between;}

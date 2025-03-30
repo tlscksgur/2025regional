@@ -1,5 +1,18 @@
+//비디오 컨트롤
+
 document.addEventListener("DOMContentLoaded", ()=>{
   const video = document.querySelector(".video-box video")
+  const controller = document.querySelector(".video-ctl > button")
+  const controlBtnBox = document.querySelector(".control-btn-box")
+
+
+controller.addEventListener("click", () => {
+  if (controlBtnBox.style.display === "none") {
+    controlBtnBox.style.display = "flex"; 
+  } else {
+    controlBtnBox.style.display = "none"; 
+  }
+});
 
   document.getElementById("play").addEventListener("click", ()=> video.play())
   document.getElementById("pause").addEventListener("click", ()=> video.pause())
@@ -11,6 +24,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("reset").addEventListener("click", ()=> video.playbackRate = 1)
   document.getElementById("repeat").addEventListener("click", ()=> video.loop = !video.loop)
 })
+
+//이미지 바꾸기
 
 function imgChange() {
   const imgs = document.querySelectorAll('.indroduce > li')
@@ -46,6 +61,8 @@ function imgChange() {
   });
 }
 
+//모달 창
+
 function modal() {
   document.addEventListener("DOMContentLoaded", ()=>{
     const body = document.querySelector("body")
@@ -68,7 +85,7 @@ function modal() {
 }
 
 
-// ----------drag and drop----------/
+// ----------드래그 앤 드롭----------/
 class Order {
   constructor() {
     this.fetchData = [];
