@@ -2,10 +2,10 @@
 session_start();
 require_once "db.php";
 
-$adminId = $_POST['AdminId'];
-$adminPw = $_POST['AdminPw'];
+$adminId = $_POST['adid'];
+$adminPw = $_POST['adpw'];
 
-$adminLogin = DB::exec("SELECT * FROM `admin` WHERE id = '$adminId'");
+$adminLogin = DB::fetch("SELECT * FROM `admin` WHERE id = '$adminId'");
 
 if($adminLogin && $adminLogin->pw === $adminPw){
   $_SESSION['ad'] = $adminLogin;
