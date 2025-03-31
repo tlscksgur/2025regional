@@ -277,3 +277,38 @@ z-index: 100; animation: back 3s forwards; transition: 2s; }
 
 
 /* --------php-------- */
+
+
+.login-modal-background{display: none; position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.322); z-index: 9999999;}
+.login-modal{width: 400px; height: 400px; padding: 20px; background-color: #24cafc; border-radius: 10px; margin: 10% auto;}
+.login-modal > form{display: flex; flex-direction: column; justify-content: space-around; width: auto; height: 350px;}
+
+.login-modal h2{text-align: center;}
+
+.login-modal > form input{margin: 0 auto;}
+.login-modal > form button{margin: 0 auto; box-shadow: 2px 2px 4px 0px gray; border: none; border-radius: 10px; cursor: pointer; transition: .3s;}
+.login-modal > form button:active{transform: translate(-.5px, .6px);}
+.login-modal > form button:hover{color: orangered;}
+.login-modal > form a{display: block; margin: 0 auto; width: 70px; height: 30px; line-height: 30px; text-align: center; border: 1px solid; color: red; border-radius: 5px; font-weight: bold;}
+
+#loginid{width: 300px; height: 30px; text-align: center; box-shadow: 2px 2px 4px 0px gray; border-radius: 10px; border: none;}
+#loginpw{width: 300px; height: 30px; text-align: center; box-shadow: 2px 2px 4px 0px gray; border-radius: 10px; border: none;}
+#loginbtn{width: 200px; height: 50px;}
+
+/* --------------------/ */
+
+.join-modal-background{display: none; position: fixed; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.322); z-index: 9999999;}
+.join-modal{width: 400px; height: 400px; padding: 20px; background-color: #24cafc; border-radius: 10px; margin: 10% auto;}
+.join-modal > form{display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; width: 350px; height: 200px;}
+
+.join-subbtn-flex > button{width: 150px; height: 30px; cursor: pointer; margin: 0 auto;}
+.join-modal h2{text-align: center;}
+
+.join-subbtn-flex{display: flex; justify-content: space-between; flex-direction: column; margin: 0 auto; width: 200px; height: 100px;}
+.join-subbtn-flex > a{margin: 0 auto; width: 70px; height: 35px; text-align: center; line-height: 35px; border: 1px solid; color: red; font-weight: bold; border-radius: 5px;}
+
+#joinid{width: 150px; height: 30px; border: none; border-radius: 5px; text-align: center; box-shadow: 2px 2px 4px 0px gray;}
+#joinpw{width: 150px; height: 30px; border: none; border-radius: 5px; text-align: center; box-shadow: 2px 2px 4px 0px gray;}
+#joinname{width: 150px; height: 30px; border: none; border-radius: 5px; text-align: center; box-shadow: 2px 2px 4px 0px gray;}
+#joinemail{width: 150px; height: 30px; border: none; border-radius: 5px; text-align: center; box-shadow: 2px 2px 4px 0px gray;}
+

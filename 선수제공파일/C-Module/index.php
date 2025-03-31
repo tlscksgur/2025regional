@@ -1,3 +1,6 @@
+<?php
+require_once "db.php"
+?>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -12,6 +15,51 @@
 <body>
   <!-- <div class="loding"></div>
   <div class="loding-background"></div> -->
+
+  <div class="login-modal-background">
+    <div class="login-modal">
+      <h2>로그인</h2>
+      <form action="login.php" method="post">
+        <input type="text" name="lgid" id="loginid" placeholder="id" autofocus required>
+        <input type="password" name="lgpw" id="loginpw" placeholder="pw" required>
+        
+        <button id="loginbtn">로그인</button>
+        <a href="#" class="quit">나가기</a>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="join-modal-background">
+    <div class="join-modal">
+      <h2>회원가입</h2>
+      <form action="join.php" method="post">
+        <input type="text" name="joinid" id="joinid" placeholder="id" autofocus required>
+        <input type="password" name="joinpw" id="joinpw" placeholder="pw" required>
+        <input type="text" name="name" id="joinname" placeholder="name" required>
+        <input type="text" name="email" id="joinemail" placeholder="email" required>
+
+        <button type="submit">회원가입</button>
+        <a href="#" class="quit">나가기</a>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="admin-modal-background">
+    <div class="admin-modal">
+      <h2>회원가입</h2>
+      <form action="admin.php" method="post">
+    <input type="text" name="adid" placeholder="Adminid" autofocus required>
+    <input type="password" name="adpw" placeholder="Adminpw" required>
+
+    <button type="submit">관리자 로그인하기</button>
+  </form>
+    </div>
+  </div>
+
+
+
 
   <div class="container">
     <header>
@@ -40,10 +88,10 @@
                 <?php endif; ?>
               </li>
               <li><a href="logout.php">로그아웃</a></li>
-              <li><a href="joinshow.php">회원가입</a></li>
+              <li><a href="#" class="joinMo">회원가입</a></li>
             <?php else: ?>
-              <li><a href="loginshow.php">로그인</a></li>
-              <li><a href="joinshow.php">회원가입</a></li>
+              <li><a href="#" class="loginMo">로그인</a></li>
+              <li><a href="#" class="joinMo">회원가입</a></li>
             <?php endif; ?>
               <li><a href="#">장바구니</a></li>
               <?php if(isset($_SESSION['ad']) && $_SESSION['ad']): ?>
@@ -539,5 +587,5 @@
   </footer>
   </div>
 </body>
-
+<script src="./js/scriptC.js"></script>
 </html>
