@@ -2,16 +2,16 @@
 session_start();
 require_once "db.php";
 
-$adminId = $_POST['adid'];
-$adminPw = $_POST['adpw'];
+[$h_psw, $salt] = hashPsw("1111");
 
-$adminLogin = DB::fetch("SELECT * FROM `admin` WHERE id = '$adminId'");
+$pswWrong = "1234";
+$pswCurrect = "1111";
 
-if($adminLogin && $adminLogin->pw === $adminPw){
-  $_SESSION['ad'] = $adminLogin;
-  echo "<script>location.href='/'</script>";
+$h_cu = hash("sha256" , $salt . $pswCurrect );
+$h_cu = hash("sha256" , $salt . $pswWrong );
+
+if($h_cu ==  $h_psw){
+  echo "맞음";
 }else{
-  echo "<script>alert('로그인 실패')</script>";
-  echo "<script>location.href='/'</script>";
+  echo "틀림";
 }
-?>

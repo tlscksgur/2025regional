@@ -36,6 +36,25 @@ function joinModal() {
   });
 }
 
+function adminModal() {
+  const adminModalback = document.querySelector(".admin-modal-background")
+  const quit = document.querySelectorAll(".quit")
+  const body = document.querySelector("body")
+  const admin = document.getElementById("admin")
+
+  admin.addEventListener("click", () =>{
+    adminModalback.style.display = 'block'
+    body.style.overflow = 'hidden'
+  })
+
+  quit.forEach(qu => {
+    qu.addEventListener("click", ()=>{
+      adminModalback.style.display = "none"
+      body.style.overflow = 'visible'
+    })
+  });
+}
+
 loginModal()
 joinModal()
-
+adminModal()

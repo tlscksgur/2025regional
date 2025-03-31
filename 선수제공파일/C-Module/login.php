@@ -9,10 +9,10 @@ $loginpw = $_POST["lgpw"];
 
 $login = DB::fetch("SELECT * FROM user where id = '$loginid'");
 
-if($login && $login->pw === $loginpw) {
+if ($login->pw === $loginpw) {
   $_SESSION['ss'] = $login;
   echo "<script> location.href='/' </script>";
-}else{
+} else {
   echo "<script>alert('로그인 실패')</script>";
   echo "<script> location.href='/' </script>";
 }

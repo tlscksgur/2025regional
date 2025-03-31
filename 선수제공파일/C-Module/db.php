@@ -1,4 +1,7 @@
 <?php
+
+require_once "lib.php";
+
 class DB{
 	static $db = null;
 	static function getDB(){
@@ -32,6 +35,9 @@ function ss() {
 	return $_SESSION['ss'] ?? false;
 }
 
-function ad() {
-	return $_SESSION['ad'] ?? false;
+function adminCrete()   {
+	$login = DB::fetch("SELECT * FROM user where id = 'admin'");
+	if(!$login) DB::exec("INSERT INTO `user`(`id`, `pw`) VALUES ('admin','1111')");	
 }
+
+adminCrete();

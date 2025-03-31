@@ -46,21 +46,6 @@ require_once "db.php"
   </div>
 
 
-  <div class="admin-modal-background">
-    <div class="admin-modal">
-      <h2>회원가입</h2>
-      <form action="admin.php" method="post">
-    <input type="text" name="adid" placeholder="Adminid" autofocus required>
-    <input type="password" name="adpw" placeholder="Adminpw" required>
-
-    <button type="submit">관리자 로그인하기</button>
-  </form>
-    </div>
-  </div>
-
-
-
-
   <div class="container">
     <header>
       <div class="header-in">
@@ -104,7 +89,7 @@ require_once "db.php"
                 <?php elseif (isset($_SESSION['ss']) && $_SESSION['ss']):?>
                   <li><a href="#">관리자</a></li>
               <?php else: ?>
-                <li><a href="adminlogin.php">관리자</a></li>
+                <li><a href="#" id="admin">관리자</a></li>
               <?php endif; ?>
           </ul>
         </div>
