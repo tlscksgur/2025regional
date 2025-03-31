@@ -1,7 +1,7 @@
 <?php
-function hashPsw($psw)
+function hashPw($pw)
 {
   $slat = bin2hex(random_bytes(32));
-  $h_psw = hash("sha256", $slat . $psw);
-  return [$h_psw, $slat];
+  $h_pw = hash("sha256", $slat . $pw);
+  return [$h_pw, $slat];
 }

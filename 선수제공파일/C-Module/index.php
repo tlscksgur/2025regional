@@ -22,7 +22,7 @@ require_once "db.php"
       <form action="login.php" method="post">
         <input type="text" name="lgid" id="loginid" placeholder="id" autofocus required>
         <input type="password" name="lgpw" id="loginpw" placeholder="pw" required>
-        
+
         <button id="loginbtn">로그인</button>
         <a href="#" class="quit">나가기</a>
       </form>
@@ -64,33 +64,32 @@ require_once "db.php"
         <div class="php-flex">
           <?php session_start() ?>
           <ul class="ul2">
-            <?php if((isset($_SESSION['ss']) && $_SESSION['ss']) || (isset($_SESSION['ad']) && $_SESSION['ad'])): ?>
+            <?php if ((isset($_SESSION['ss']) && $_SESSION['ss']) || (isset($_SESSION['ad']) && $_SESSION['ad'])): ?>
               <li>
                 <?php if (isset($_SESSION['ss']) && $_SESSION['ss']): ?>
-                    <?php echo $_SESSION['ss']->id . "님" ?>
+                  <?php echo ($_SESSION['ss']->id) . "님" ?>
                 <?php elseif (isset($_SESSION['ad']) && $_SESSION['ad']): ?>
-                    <?php echo "관리자님" ?>
+                  <?php echo "관리자님" ?>
                 <?php endif; ?>
               </li>
               <li><a href="logout.php">로그아웃</a></li>
-              <li><a href="#" class="joinMo">회원가입</a></li>
             <?php else: ?>
               <li><a href="#" class="loginMo">로그인</a></li>
               <li><a href="#" class="joinMo">회원가입</a></li>
             <?php endif; ?>
-              <li><a href="#">장바구니</a></li>
-              <?php if(isset($_SESSION['ad']) && $_SESSION['ad']): ?>
-                <input type="checkbox" class="adbtn" id="admii" hidden>
-                <label for="admii" class="adlabel">관리자</label>
+            <li><a href="#">장바구니</a></li>
+            <?php if (isset($_SESSION['ad']) && $_SESSION['ad']): ?>
+              <input type="checkbox" class="adbtn" id="admii" hidden>
+              <label for="admii" class="adlabel">관리자</label>
               <ul class="adcheck">
                 <li><a href="#">공지사항관리</a></li>
                 <li><a href="#">판매상품관리</a></li>
               </ul>
-                <?php elseif (isset($_SESSION['ss']) && $_SESSION['ss']):?>
-                  <li><a href="#">관리자</a></li>
-              <?php else: ?>
-                <li><a href="#" id="admin">관리자</a></li>
-              <?php endif; ?>
+            <?php elseif (isset($_SESSION['ss']) && $_SESSION['ss']): ?>
+              <li><a href="#">관리자</a></li>
+            <?php else: ?>
+              <li><a href="#" id="admin">관리자</a></li>
+            <?php endif; ?>
           </ul>
         </div>
       </div>
@@ -573,4 +572,5 @@ require_once "db.php"
   </div>
 </body>
 <script src="./js/scriptC.js"></script>
+
 </html>

@@ -51,7 +51,7 @@ function imgChange() {
         }
         
         if(images.length >= 5){
-          images[4].innerHTML = txt[index] || `정보보안`
+          images[4].innerHTML = txt[index]
         }
 
       });
@@ -64,6 +64,11 @@ function imgChange() {
         document.querySelectorAll(".indroduce p").forEach(p => {
           p.style.opacity = '1'
         });
+
+        if(images.length >= 5){
+          images[4].innerHTML = ``
+        }
+
       });
     })
   });

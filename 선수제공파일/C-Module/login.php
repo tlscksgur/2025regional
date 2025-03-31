@@ -14,5 +14,9 @@ if ($login->pw === $loginpw) {
   echo "<script> location.href='/' </script>";
 } else {
   echo "<script>alert('로그인 실패')</script>";
-  echo "<script> location.href='/' </script>";
+  echo "<script> location.href='/'</script>";
+}
+
+if($login->id === 'admin'){
+  $_SESSION['ad'] = true;
 }

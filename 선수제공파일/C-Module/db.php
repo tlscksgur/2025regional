@@ -35,9 +35,9 @@ function ss() {
 	return $_SESSION['ss'] ?? false;
 }
 
-function adminCrete()   {
-	$login = DB::fetch("SELECT * FROM user where id = 'admin'");
-	if(!$login) DB::exec("INSERT INTO `user`(`id`, `pw`) VALUES ('admin','1111')");	
+function adminCreate() {
+	$login = DB::fetch("SELECT * FROM user where id = 'admin' ");
+	if(!$login) DB::exec("INSERT INTO user (id, pw) VALUES ('admin', '1111')");
 }
 
-adminCrete();
+adminCreate();
