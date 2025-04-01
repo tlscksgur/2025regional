@@ -115,15 +115,64 @@ dialog{position: fixed; display: none; inset: 0; width: 100%; height: 100%; back
 .content2{display: flex; justify-content: space-around; align-items: center; flex-direction: column; width: 1300px; height: 755px;}
 
 .information{width: 800px; height: 110px; border: 1px solid;}
-.exhibition{width: 800px; height: 550px; border: 1px solid;}
+.exhibition{width: 800px; height: 550px; border: 1px solid; display: flex; justify-content: space-around;}
 .order{width: 430px; height: 550px; border: 1px solid;}
 .payment{width: 430px; height: 100px; border: 1px solid;}
 
+.product{
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
 
 .no-member-btn{width: 100px; height: 45px; margin: 20px auto;}
 .open{width: 140px; height: 50px;}
 .close{display: inline-block; width: 30px; height: 30px; margin-top: -30px; margin-right: -30px; color: red; font-size: 40px; font-weight: bold; cursor: pointer;}
 
+/* Style for the item being dragged */
+.ui-draggable-dragging {
+  z-index: 1050; /* Ensure it's above the modal */
+  border: 2px dashed #ccc;
+  opacity: 0.7;
+}
+
+/* Style for the drop zone when a draggable item is hovering over it */
+.modal-box .content2 .order.drop-hover {
+  background-color: #e0f7fa; /* Light cyan background */
+  border: 2px dashed #007bff;
+}
+
+/* Style for items added to the order area */
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.order-item span {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.order-item .remove-item {
+  cursor: pointer;
+  color: red;
+  background: none;
+  border: none;
+  font-weight: bold;
+  padding: 2px 5px;
+}
+
+/* Style for the empty order area text */
+.order-placeholder {
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
 
 /* 
 dialog {display: none; position: fixed; inset: 0; width: 100%; height: 100%; background: rgba(128, 128, 128, 0.5); }

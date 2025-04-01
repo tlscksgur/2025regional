@@ -1,27 +1,27 @@
 //비디오 컨트롤
 
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
   const video = document.querySelector(".video-box video")
   const controller = document.querySelector(".video-ctl > button")
   const controlBtnBox = document.querySelector(".control-btn-box")
 
   controller.addEventListener("click", () => {
     if (controlBtnBox.style.display === "none") {
-      controlBtnBox.style.display = "flex"; 
+      controlBtnBox.style.display = "flex";
     } else {
-      controlBtnBox.style.display = "none"; 
+      controlBtnBox.style.display = "none";
     }
-});
+  });
 
-  document.getElementById('play').addEventListener("click", ()=>{video.play()})
-  document.getElementById('pause').addEventListener("click", ()=>{video.pause()})
-  document.getElementById('stop').addEventListener("click", ()=>{video.pause(); video.currentTime = 0})
-  document.getElementById('back').addEventListener("click", ()=>{video.currentTime -= 10})
-  document.getElementById('fast').addEventListener("click", ()=>{video.currentTime += 10})
-  document.getElementById('speedUp').addEventListener("click", ()=>{video.playbackRate += .1})
-  document.getElementById('speedDown').addEventListener("click", ()=>{video.playbackRate -= .1})
-  document.getElementById('reset').addEventListener("click", ()=>{video.playbackRate = 1})
-  document.getElementById('repeat').addEventListener("click", ()=>{video.loop = !video.loop})
+  document.getElementById('play').addEventListener("click", () => { video.play() })
+  document.getElementById('pause').addEventListener("click", () => { video.pause() })
+  document.getElementById('stop').addEventListener("click", () => { video.pause(); video.currentTime = 0 })
+  document.getElementById('back').addEventListener("click", () => { video.currentTime -= 10 })
+  document.getElementById('fast').addEventListener("click", () => { video.currentTime += 10 })
+  document.getElementById('speedUp').addEventListener("click", () => { video.playbackRate += .1 })
+  document.getElementById('speedDown').addEventListener("click", () => { video.playbackRate -= .1 })
+  document.getElementById('reset').addEventListener("click", () => { video.playbackRate = 1 })
+  document.getElementById('repeat').addEventListener("click", () => { video.loop = !video.loop })
 })
 
 //이미지 바꾸기
@@ -37,7 +37,7 @@ function imgChange() {
   ]
 
   images.forEach((e, index) => {
-    e.addEventListener("mouseenter", ()=>{
+    e.addEventListener("mouseenter", () => {
       images.forEach(imgs => {
         imgs.style.backgroundImage = `url(B-ModuleImg/${e.className}.jpg)`
 
@@ -46,18 +46,18 @@ function imgChange() {
         });
 
         const text = e.querySelector('p')
-        if(text){
+        if (text) {
           text.style.opacity = "1"
         }
-        
-        if(images.length >= 5){
+
+        if (images.length >= 5) {
           images[4].innerHTML = txt[index]
         }
 
       });
     })
 
-    e.addEventListener("mouseleave", ()=>{
+    e.addEventListener("mouseleave", () => {
       images.forEach(imgs => {
         imgs.style.backgroundImage = `url(B-ModuleImg/${imgs.className}.jpg)`
 
@@ -65,33 +65,33 @@ function imgChange() {
           p.style.opacity = '1'
         });
 
-        if(images.length >= 5){
+        if (images.length >= 5) {
           images[4].innerHTML = ``
         }
 
       });
     })
   });
-  
-  
+
+
 }
 
 //모달 창
 
 function modal() {
-  document.addEventListener("DOMContentLoaded", ()=>{
+  document.addEventListener("DOMContentLoaded", () => {
     const body = document.querySelector("body")
     const dialog = document.querySelector("dialog")
     const open = document.querySelector(".open")
     const close = document.querySelector(".close")
-  
-    open.addEventListener("click", ()=>{
+
+    open.addEventListener("click", () => {
       dialog.showModal()
       dialog.style.display = "block"
       body.style.overflow = "hidden"
     })
-  
-    close.addEventListener("click", ()=>{
+
+    close.addEventListener("click", () => {
       dialog.close()
       dialog.style.display = "none"
       body.style.overflow = "visible"
@@ -103,56 +103,3 @@ function modal() {
 modal()
 imgChange()
 // ----------드래그 앤 드롭----------/
-
-  // $(function () {
-  //   let totalPrice = 0;
-
-  //   function updateTotal() {
-  //     $("#total-price").text(totalPrice);
-  //   }
-
-  //   function generateGuestID() {
-  //     return Math.random().toString(36).substr(2, 6).toUpperCase();
-  //   }
-    
-  //   $(document).ready(function () {
-  //     console.log("jQuery가 로드되었습니다."); // jQuery 로드 확인용 메시지
-  
-  //     // 버튼 클릭 시 모달 열기
-  //     $(".open").click(function () {
-  //         console.log("모달 열기 버튼 클릭됨");
-  //         $("#guest-id").text(generateGuestID()); // 랜덤 ID 생성
-  //         $("dialog")[0].showModal(); // 모달 표시
-  //     });
-  // });
-
-  //   $(".close").click(() => $("dialog")[0].close());
-
-  //   $(".order").droppable({
-  //     accept: ".product",
-  //     drop: function (event, ui) {
-  //       let item = ui.helper.clone();
-  //       let price = parseInt(item.data("price"));
-
-  //       item.append(`<span class="remove">❌</span>`);
-  //       $(".order").append(item);
-  //       ui.helper.addClass("dropped");
-
-  //       totalPrice += price;
-  //       updateTotal();
-  //     }
-  //   });
-
-  //   $(".order").on("click", ".remove", function () {
-  //     let price = parseInt($(this).parent().data("price"));
-  //     totalPrice -= price;
-  //     updateTotal();
-  //     $(this).parent().remove();
-  //   });
-
-  //   $(".confirm").click(() => {
-  //     $("dialog")[0].close();
-  //     $("body").append(`<div id="order-message">방금 비회원 ${$("#guest-id").text()}님이 ${totalPrice}원을 결제하셨습니다!</div>`);
-  //     $("#order-message").fadeIn().delay(3000).fadeOut();
-  //   });
-  // });
