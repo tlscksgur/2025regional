@@ -5,10 +5,14 @@
 
 @font-face {
   font-family: font;
-  src: url("/2025regional/선수제공파일/공통/fontawesome/fonts/fontawesome-webfont.ttf");
+  src: url("./선수제공파일/공통/fontawesome/fonts/fontawesome-webfont.ttf");
 }
 
-.body{
+body{
+  font-family: font;
+}
+
+.container{
   font-family: font;
 }
 

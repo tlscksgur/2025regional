@@ -13,15 +13,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 });
 
-  document.getElementById("play").addEventListener("click", ()=> video.play())
-  document.getElementById("pause").addEventListener("click", ()=> video.pause())
-  document.getElementById("stop").addEventListener("click", ()=> {video.pause(); video.currentTime = 0})
-  document.getElementById("back").addEventListener("click", ()=> video.currentTime -= 10)
-  document.getElementById("fast").addEventListener("click", ()=> video.currentTime += 10)
-  document.getElementById("speedDown").addEventListener("click", ()=> video.playbackRate -= 0.1)
-  document.getElementById("speedUp").addEventListener("click", ()=> video.playbackRate += 0.1)
-  document.getElementById("reset").addEventListener("click", ()=> video.playbackRate = 1)
-  document.getElementById("repeat").addEventListener("click", ()=> video.loop = !video.loop)
+  document.getElementById('play').addEventListener("click", ()=>{video.play()})
+  document.getElementById('pause').addEventListener("click", ()=>{video.pause()})
+  document.getElementById('stop').addEventListener("click", ()=>{video.pause(); video.currentTime = 0})
+  document.getElementById('back').addEventListener("click", ()=>{video.currentTime -= 10})
+  document.getElementById('fast').addEventListener("click", ()=>{video.currentTime += 10})
+  document.getElementById('speedUp').addEventListener("click", ()=>{video.playbackRate += .1})
+  document.getElementById('speedDown').addEventListener("click", ()=>{video.playbackRate -= .1})
+  document.getElementById('reset').addEventListener("click", ()=>{video.playbackRate = 1})
+  document.getElementById('repeat').addEventListener("click", ()=>{video.loop = !video.loop})
 })
 
 //이미지 바꾸기
@@ -78,74 +78,81 @@ function imgChange() {
 
 //모달 창
 
-// function modal() {
-//   document.addEventListener("DOMContentLoaded", ()=>{
-//     const body = document.querySelector("body")
-//     const dialog = document.querySelector("dialog")
-//     const open = document.querySelector(".open")
-//     const close = document.querySelector(".close")
+function modal() {
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const body = document.querySelector("body")
+    const dialog = document.querySelector("dialog")
+    const open = document.querySelector(".open")
+    const close = document.querySelector(".close")
   
-//     open.addEventListener("click", ()=>{
-//       dialog.showModal()
-//       dialog.style.display = "block"
-//       body.style.overflow = "hidden"
-//     })
+    open.addEventListener("click", ()=>{
+      dialog.showModal()
+      dialog.style.display = "block"
+      body.style.overflow = "hidden"
+    })
   
-//     close.addEventListener("click", ()=>{
-//       dialog.close()
-//       dialog.style.display = "none"
-//       body.style.overflow = "visible"
-//     })
-//   })
-// }
+    close.addEventListener("click", ()=>{
+      dialog.close()
+      dialog.style.display = "none"
+      body.style.overflow = "visible"
+    })
+  })
+}
 
 
+modal()
+imgChange()
 // ----------드래그 앤 드롭----------/
 
-  $(function () {
-    let totalPrice = 0;
+  // $(function () {
+  //   let totalPrice = 0;
 
-    function updateTotal() {
-      $("#total-price").text(totalPrice);
-    }
+  //   function updateTotal() {
+  //     $("#total-price").text(totalPrice);
+  //   }
 
-    function generateGuestID() {
-      return Math.random().toString(36).substr(2, 6).toUpperCase();
-    }
+  //   function generateGuestID() {
+  //     return Math.random().toString(36).substr(2, 6).toUpperCase();
+  //   }
+    
+  //   $(document).ready(function () {
+  //     console.log("jQuery가 로드되었습니다."); // jQuery 로드 확인용 메시지
+  
+  //     // 버튼 클릭 시 모달 열기
+  //     $(".open").click(function () {
+  //         console.log("모달 열기 버튼 클릭됨");
+  //         $("#guest-id").text(generateGuestID()); // 랜덤 ID 생성
+  //         $("dialog")[0].showModal(); // 모달 표시
+  //     });
+  // });
 
-    $(".open").click(() => {
-      console.log("모달 열기 버튼 클릭됨"); // 디버깅용 콘솔 로그
-      $("#guest-id").text(generateGuestID()); // 랜덤 비회원 ID 설정
-      $("dialog")[0].showModal(); // 모달 열기
-  });
+  //   $(".close").click(() => $("dialog")[0].close());
 
-    $(".close").click(() => $("dialog")[0].close());
+  //   $(".order").droppable({
+  //     accept: ".product",
+  //     drop: function (event, ui) {
+  //       let item = ui.helper.clone();
+  //       let price = parseInt(item.data("price"));
 
-    $(".order").droppable({
-      accept: ".product",
-      drop: function (event, ui) {
-        let item = ui.helper.clone();
-        let price = parseInt(item.data("price"));
+  //       item.append(`<span class="remove">❌</span>`);
+  //       $(".order").append(item);
+  //       ui.helper.addClass("dropped");
 
-        item.append(`<span class="remove">❌</span>`);
-        $(".order").append(item);
-        ui.helper.addClass("dropped");
+  //       totalPrice += price;
+  //       updateTotal();
+  //     }
+  //   });
 
-        totalPrice += price;
-        updateTotal();
-      }
-    });
+  //   $(".order").on("click", ".remove", function () {
+  //     let price = parseInt($(this).parent().data("price"));
+  //     totalPrice -= price;
+  //     updateTotal();
+  //     $(this).parent().remove();
+  //   });
 
-    $(".order").on("click", ".remove", function () {
-      let price = parseInt($(this).parent().data("price"));
-      totalPrice -= price;
-      updateTotal();
-      $(this).parent().remove();
-    });
-
-    $(".confirm").click(() => {
-      $("dialog")[0].close();
-      $("body").append(`<div id="order-message">방금 비회원 ${$("#guest-id").text()}님이 ${totalPrice}원을 결제하셨습니다!</div>`);
-      $("#order-message").fadeIn().delay(3000).fadeOut();
-    });
-  });
+  //   $(".confirm").click(() => {
+  //     $("dialog")[0].close();
+  //     $("body").append(`<div id="order-message">방금 비회원 ${$("#guest-id").text()}님이 ${totalPrice}원을 결제하셨습니다!</div>`);
+  //     $("#order-message").fadeIn().delay(3000).fadeOut();
+  //   });
+  // });

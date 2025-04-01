@@ -42,7 +42,6 @@
                 <?php endif; ?>
               </li>
               <li><a href="logout.php">로그아웃</a></li>
-              <li><a href="joinshow.php">회원가입</a></li>
             <?php else: ?>
               <li><a href="loginshow.php">로그인</a></li>
               <li><a href="joinshow.php">회원가입</a></li>

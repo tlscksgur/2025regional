@@ -1,5 +1,5 @@
 <?php
-require_once "db.php"
+require_once "db.php";
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -8,9 +8,11 @@ require_once "db.php"
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="font/font-awesome.min.css">
+  <link rel="stylesheet" href="/선수제공파일/공통/fontawesome/css/font-awesome.min.css?v=<?php echo time(); ?>">
   <title>2025지방</title>
 </head>
+
+
 
 <body>
   <!-- <div class="loding"></div>
@@ -471,7 +473,7 @@ require_once "db.php"
 
           <span class="fa-arrow-right"></span>
           <div class="step4">
-            <p class="step-icon fa-cutlery"></p>
+            <p class="step-icon fa fa-cutlery"></p>
             <h3 class="step-title">품평회</h3>
             <p class="step-content">공정한 평가를 위해<br> 상품력, 기획력, 영업력, 판촉력 등을<br> 기준으로 내부 품평회를 실시합니다.</p>
             <div class="step-number-box">
@@ -481,7 +483,7 @@ require_once "db.php"
 
           <span class="fa-arrow-right"></span>
           <div class="step5">
-            <p class="step-icon fa-ellipsis-h"></p>
+            <p class="fa fa-ellipsis-h step-icon"></p>
             <h3 class="step-title">신용평가</h3>
             <p class="step-content">입점 확정 협력사는 신뢰 있는<br> 거래를 위해 신용평가를 진행합니다.</p>
             <div class="step-number-box">
@@ -491,7 +493,7 @@ require_once "db.php"
 
           <span class="fa-arrow-right"></span>
           <div class="step6">
-            <p class="step-icon fa-check"></p>
+            <p class="fa fa-check step-icon "></p>
             <h3 class="step-title">계약체결</h3>
             <p class="step-content">전자계약서(또는 수기계약서)로<br> 거래계약서와 관련 서류를 작성하면<br> 입점 절차가 완료됩니다.</p>
             <div class="step-number-box">
@@ -554,11 +556,11 @@ require_once "db.php"
 
           <div class="footer-sns">
             <ul>
-              <li><a href="#" class="fa-chrome"></a></li>
-              <li><a href="#" class="fa-facebook-square"></a></li>
-              <li><a href="#" class="fa-github"></a></li>
-              <li><a href="#" class="fa-instagram"></a></li>
-              <li><a href="#" class="fa-twitter"></a></li>
+              <li><a href="#" class="fa fa-chrome"></a></li>
+              <li><a href="#" class="fa fa-facebook-square"></a></li>
+              <li><a href="#" class="fa fa-github"></a></li>
+              <li><a href="#" class="fa fa-instagram"></a></li>
+              <li><a href="#" class="fa fa-twitter"></a></li>
             </ul>
           </div>
         </div>
