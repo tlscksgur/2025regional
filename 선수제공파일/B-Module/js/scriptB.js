@@ -78,145 +78,74 @@ function imgChange() {
 
 //모달 창
 
-function modal() {
-  document.addEventListener("DOMContentLoaded", ()=>{
-    const body = document.querySelector("body")
-    const dialog = document.querySelector("dialog")
-    const open = document.querySelector(".open")
-    const close = document.querySelector(".close")
+// function modal() {
+//   document.addEventListener("DOMContentLoaded", ()=>{
+//     const body = document.querySelector("body")
+//     const dialog = document.querySelector("dialog")
+//     const open = document.querySelector(".open")
+//     const close = document.querySelector(".close")
   
-    open.addEventListener("click", ()=>{
-      dialog.showModal()
-      dialog.style.display = "block"
-      body.style.overflow = "hidden"
-    })
+//     open.addEventListener("click", ()=>{
+//       dialog.showModal()
+//       dialog.style.display = "block"
+//       body.style.overflow = "hidden"
+//     })
   
-    close.addEventListener("click", ()=>{
-      dialog.close()
-      dialog.style.display = "none"
-      body.style.overflow = "visible"
-    })
-  })
-}
+//     close.addEventListener("click", ()=>{
+//       dialog.close()
+//       dialog.style.display = "none"
+//       body.style.overflow = "visible"
+//     })
+//   })
+// }
 
 
 // ----------드래그 앤 드롭----------/
-class Order {
-  constructor() {
-    this.fetchData = [];
-    this.categorizedData = [];
-    this.orderData = [];
-    this.init();
-  }
 
-  async init() {
-    this.fetchData = await fetch('./product.json').then(r => r.json());
-    this.categorizedData = Object.groupBy(this.fetchData, ({ category }) => category);
-    this.html();
-    this.setEvents();
-  }
+  $(function () {
+    let totalPrice = 0;
 
-  changeCategory({ target }) {
-    $('.selector-area > .selected').classList.remove('selected');
-    target.classList.add('selected');
-    $('.display-area > .fc:not(.none)').classList.add('none');
-    $(`.display-area > .fc[data-category="${target.textContent}"]`).classList.remove('none');
-  }
-
-  html() {
-    Object.values(this.categorizedData).forEach((arr, idx) => {
-      const categoryArr = ['건강식품', '디지털', '팬시', '향수', '헤어케어'];
-      const $fc = newElement('div', { className: `fc g1 abs w1 ${idx === 0 ? `` : `none`}` });
-      $fc.dataset.category = categoryArr[idx];
-      arr.forEach(({ title, description, img, price, dc }) => {
-        const $card = newElement('div', { className: `card ov ${dc ? `popular` : ``}`, draggable: 'true' });
-        $card.dataset.title = title;
-        $card.innerHTML = `
-          <img src=".${img}" title="img" alt="img" />
-          <h3>${title}</h3>
-          <p>${description}</p>
-          <div class="ac jr g1">${dc ? `<i class="lh">${numberFormat(price)}</i><b>${numberFormat(price - dc)}</b>` : `<b>${numberFormat(price)}</b>`}</div>
-        `;
-        $fc.append($card);
-      });
-      $('.display-area').append($fc);
-    });
-  }
-
-  setState(obj) {
-    const existingItemIdx = this.orderData.findIndex(({ title }) => { return title === obj.title });
-    if (existingItemIdx >= 0) {
-      this.orderData[existingItemIdx].count++;
-      return this.render();
+    function updateTotal() {
+      $("#total-price").text(totalPrice);
     }
-    this.orderData.push({ ...obj, count: 1 });
-    this.render();
-  }
 
-  dragCtrl($title) {
-    const obj = this.fetchData.find(({ title }) => title === $title);
-    this.setState(obj);
-    $$('.display-area .card').forEach((el) => {
-      if (el.dataset.title === $title) el.classList.add('op5');
-    });
-  }
-
-  modalInit($modal, open = true) {
-    if (!open) return modalCtrl($modal, false);
-    $('#non-member-id').value = id();
-    modalCtrl($modal);
-  }
-
-  banner() {
-    const $banner = newElement('div', { textContent: `방금 비회원 ${$('#non-member-id').value}님이 ${$('#non-member-totalprice').value}을 결제하셨습니다!`, className: `fix fff order-banner radius1` });
-    document.body.append($banner);
-    setTimeout(() => { $banner.remove(); }, 3000);
-  }
-
-  removeDrag(e, $title) {
-    const dragTarget = document.elementFromPoint(e.clientX, e.clientY);
-    [...$$('.display-area .card')].find((e) => e.dataset.title === $title)?.classList.remove('op5');
-    if (!dragTarget.closest('.order-area')) {
-      const $title = e.currentTarget.dataset.title;
-      const finding = this.orderData.find(({ title }) => { return title === $title });
-      this.orderData.pop(finding);
-      this.render();
+    function generateGuestID() {
+      return Math.random().toString(36).substr(2, 6).toUpperCase();
     }
-  }
 
-  render() {
-    let totalprice = 0;
-    $('.order-area').innerHTML = '';
-    this.orderData.forEach(({ title, description, price, dc, img, count }) => {
-      const $card = newElement('div', { className: `${dc ? `popular` : ``} card ov`, draggable: "true", style: "padding-bottom: 0; border-color: #365fd9" });
-      $card.dataset.title = title;
-      $card.innerHTML = `
-        <img src=".${img}" alt="img" title="img" />
-        <h3>${title}</h3>
-        <p>${description}</p>
-        <div class="ac jr g1">${dc ? `<i class="lh">${numberFormat(price)}</i><b>${numberFormat(price - dc)}</b>` : `<b>${numberFormat(price)}</b>`}</div>
-        <div class="ac jb"><p>수량</p><input type="number" value="${count}" min="1" style="width: 70%;" /></div>
-        <div class="ac jb"><p>금액</p><div class="fxc"><b>${numberFormat((price - dc) * count)}</b></div></div>
-        <div class="jb"></div>
-      `;
-      $('.order-area').append($card);
-      totalprice += ((price - dc) * count);
-      $card.ondragend = (e) => { this.removeDrag(e, title); }
+    $(".open").click(() => {
+      console.log("모달 열기 버튼 클릭됨"); // 디버깅용 콘솔 로그
+      $("#guest-id").text(generateGuestID()); // 랜덤 비회원 ID 설정
+      $("dialog")[0].showModal(); // 모달 열기
+  });
+
+    $(".close").click(() => $("dialog")[0].close());
+
+    $(".order").droppable({
+      accept: ".product",
+      drop: function (event, ui) {
+        let item = ui.helper.clone();
+        let price = parseInt(item.data("price"));
+
+        item.append(`<span class="remove">❌</span>`);
+        $(".order").append(item);
+        ui.helper.addClass("dropped");
+
+        totalPrice += price;
+        updateTotal();
+      }
     });
-    $('#non-member-totalprice').value = numberFormat(totalprice);
-  }
 
-  setEvents() {
-    $('.non-member-order-btn').onclick = () => this.modalInit('.non-member-order');
-    $('.non-member-order-finish').onclick = () => { this.modalInit('.non-member-order', false); this.banner(); };
-    $$('.selector-area > div').forEach(el => el.onclick = (e) => { this.changeCategory(e); });
-    $$('.display-area .card').forEach(el => el.ondragstart = (e) => { e.dataTransfer.setData('title', e.currentTarget.dataset.title); });
-    $('.order-area').ondragover = (e) => { e.preventDefault(); }
-    $('.order-area').ondrop = (e) => { e.preventDefault(); this.dragCtrl(e.dataTransfer.getData('title')); }
-  }
-}
+    $(".order").on("click", ".remove", function () {
+      let price = parseInt($(this).parent().data("price"));
+      totalPrice -= price;
+      updateTotal();
+      $(this).parent().remove();
+    });
 
-new Order();
-
-modal()
-imgChange()
+    $(".confirm").click(() => {
+      $("dialog")[0].close();
+      $("body").append(`<div id="order-message">방금 비회원 ${$("#guest-id").text()}님이 ${totalPrice}원을 결제하셨습니다!</div>`);
+      $("#order-message").fadeIn().delay(3000).fadeOut();
+    });
+  });

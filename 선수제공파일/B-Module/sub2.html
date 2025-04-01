@@ -11,15 +11,24 @@
 
 <dialog>
   <div class="modal-box">
-    <div class="box1">회원정보영역</div>
-    <div class="box2">전시영역</div>
-    <div class="box3">주문영역</div>
-    <div class="box4">결제영역</div>
-    
+    <div class="content1">
+      <div class="information">회원정보영역 - <span id="guest-id"></span></div>
+      <div class="exhibition">
+        <div class="product" data-price="1000">🍎 사과 - 1000원</div>
+        <div class="product" data-price="2000">🍌 바나나 - 2000원</div>
+        <div class="product" data-price="3000">🍇 포도 - 3000원</div>
+      </div>
+    </div>
+    <div class="content2">
+      <div class="order">주문영역</div>
+      <div class="payment">총 결제금액: <span id="total-price">0</span>원</div>
+      <button class="confirm">주문하기</button>
+    </div>
     <a class="close">X</a>
   </div>
 </dialog>
 
+<div id="order-message"></div>
 <body>
   <header>
     <div class="header-in">
@@ -388,6 +397,8 @@
     </div>
   </footer>
   <script src="./js/scriptB.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 </body>
 
 </html>
