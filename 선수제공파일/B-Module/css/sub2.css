@@ -131,18 +131,16 @@ dialog{position: fixed; display: none; inset: 0; width: 100%; height: 100%; back
 
 /* Style for the item being dragged */
 .ui-draggable-dragging {
-  z-index: 1050; /* Ensure it's above the modal */
+  z-index: 1050;
   border: 2px dashed #ccc;
   opacity: 0.7;
 }
 
-/* Style for the drop zone when a draggable item is hovering over it */
 .modal-box .content2 .order.drop-hover {
-  background-color: #e0f7fa; /* Light cyan background */
+  background-color: #e0f7fa;
   border: 2px dashed #007bff;
 }
 
-/* Style for items added to the order area */
 .order-item {
   display: flex;
   justify-content: space-between;
@@ -166,7 +164,6 @@ dialog{position: fixed; display: none; inset: 0; width: 100%; height: 100%; back
   padding: 2px 5px;
 }
 
-/* Style for the empty order area text */
 .order-placeholder {
     color: #aaa;
     text-align: center;
