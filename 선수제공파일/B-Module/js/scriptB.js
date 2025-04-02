@@ -119,11 +119,6 @@ function random() {
   })
 }
 
-function order() {
-  
-}
-
-
 
 function drag() {
   const buy = document.querySelector(".confirm")
@@ -137,9 +132,7 @@ function drag() {
     console.log(id);
     $(`.exhibition .product[data-id="${id}"]`).css('opacity', 1).draggable("enable");
   }
-
   
-
   $(".proitem1, .proitem2").each((i, e) => {
     $(e).addClass("product")
       .attr("data-id", `orig-${i}`)

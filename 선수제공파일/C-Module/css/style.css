@@ -93,6 +93,7 @@ border-radius: 8px; margin-left: 5px; cursor: pointer; transition: .2s;}
 .line2{position: absolute; top: 485px; left: 150px; width: 505px; height: 3px; background-color: orangered; z-index: 10; border-radius: 5px;}
 .line3{position: absolute; top: 485px; left: 150px; width: 500px; height: 3px; background-color: orangered; z-index: 10; border-radius: 5px;}
 .line4{position: absolute; top: 475px; left: 150px; width: 575px; height: 3px; background-color: orangered; z-index: 10; border-radius: 5px;}
+.slide>ul:hover{animation-play-state: paused;}
 
 
 @keyframes move {
@@ -107,7 +108,6 @@ border-radius: 8px; margin-left: 5px; cursor: pointer; transition: .2s;}
   100% {transform: translateX(-7680px);}
 }
 
-.slide>ul:hover{animation-play-state: paused;}
 
 /* -------------슬라이드--------------- */
 h1{width: 90%; text-align: center;}
