@@ -1,29 +1,21 @@
 function drag() {
-  function resotre(id) {
-    $(`.exhibition proitemall[data-id = "${id}"]`).css("opacity", 1)
+  function restore() {
+    $(`.exhibition .proitemall[data-id="${id}"]`).css("opacity", 1).draggable("enable")
   }
 
-  $(`.exhibition .proitemall`).each((i, el) => {
-    $(el).data("data-id", `orig0${i}`).draggable({
+  $(`.exhibition .proitemall`).each((i, e)=>{
+    $(e).attr("data-id", `or-${i}`).draggable({
       helper: "clone"
     })
   })
 
   $(".order").droppable({
     accept: ".exhibition .proitemall:not(.cloned)",
-
-    drop(event, ui) {
-      const $orig = ui.draggable;
-      const id = $orig.id
-
-      const $clone = $orig
-      .clone()
-      .attr("data-id", id)
-      .removeClass("ui-draggable ui-draggable-handle")
-      .addClass("cloned")
-      .appendTo(this)
+    drop(event, ui){
+      const $or = ui.draggable
+      const id = $or.attr("data-id")
     }
   })
+
   
 }
-drag()
