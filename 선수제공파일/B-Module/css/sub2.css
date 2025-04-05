@@ -47,6 +47,7 @@ section{width: 100%; height: auto; padding-top: 70px; font-family: font;}
 .all-product{display: flex; flex-wrap: wrap; justify-content: center; align-items: center; padding: 20px; gap: 20px; width: 100%; height: 100%; margin-top: 0px;}
 .all-product > ul{display: flex; flex-direction: column;  padding: 10px;
 width: 360px; height: 520px; border: 1px solid; border-radius: 10px; box-shadow: 2px 3px 5px 0px gray;}
+.all-product img{width: 200px;}
 
 .all-product ul li{border-bottom: 1px solid #b6b6b6; line-height: 25px;}
 

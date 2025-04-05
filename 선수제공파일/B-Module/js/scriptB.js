@@ -117,7 +117,7 @@ function random() {
     for (let i = 0; i <= 5; i++) {
       let random = Math.floor(Math.random() * numbers.length)
       $("#guest-id").get(0).textContent += numbers[random]
-      numbers[random] = ""  
+      numbers[random] = ""
       numbers = numbers.filter(e => e != "")
     }
   })
