@@ -1,4 +1,4 @@
-const auto = document.getElementById("autoplay")
+const auto = document.querySelector(".auto") 
 auto.addEventListener("change", ()=>{
   localStorage.setItem("autoplay", auto.checked)
   auto.checked ? video.play() : video.pause()
