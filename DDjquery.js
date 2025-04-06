@@ -1,66 +1,38 @@
 function drag() {
-  const buy = document.querySelector(".confirm");
-
-  let totalPrice = 0;
-  function updateTotalPrice() {
-    $("#total-price").get(0).textContent = totalPrice.toLocaleString();
-  }
-
   function restore(id) {
-    $(`.exhibition .product[data-id="${id}"]`).css('opacity', 1);
+    $(`.exhibition .proitemall[data-id="${id}"]`).css("opacity", 1).draggable("enable")
   }
 
-  $(".proitemall").each((i, e) => {
-    $(e).addClass("product")
-      .attr("data-id", `orig-${i}`)
-      .draggable({
-        helper: "clone",
-      });
+  $(`.exhibition .proitemall`).each((i, el) => {
+    $(el).attr("data-id", `orig-${i}`).draggable({
+      helper: "clone"
+    });
   });
 
   $(".order").droppable({
-    accept: ".product:not(.cloned)",
+    accept: ".exhibition .proitemall:not(.cloned)", //.exhibition .proitemall 중에서 .cloned 클래스를 가지지 않은 요소만 드롭 가능
     drop(event, ui) {
-      const $orig = ui.draggable;
-      const id = $orig.data("id");
-
-      // 가격 정보 추출
-      const priceText = $orig.find("li").last().text(); // 마지막 <li>에서 가격 추출
-      const price = parseInt(priceText.replace(/[^0-9]/g, ""), 10);
-
-      $orig.css({ opacity: 0.5 });
-
-      const $clone = $orig
-        .clone()
-        .removeClass('ui-draggable ui-draggable-handle')
-        .addClass('cloned')
+      const $orig = ui.draggable; // 드래그된 원본 요소 가져오기
+      const id = $orig.attr("data-id"); // 원본 요소의 data-id 속성값 가져오기
+      const $clone = $orig.clone() // 원복요소 복제
+      
         .attr("data-id", id)
-        .appendTo(this);
+        .removeClass("ui-draggable ui-draggable-handle")
+        .addClass("cloned")
+        .appendTo(this) // 현재 드롭된 영역(this)에 복제된 요소 추가
+        .draggable();
 
-      $clone.draggable({
-        stop(event, ui) {
-          const $parent = $(this).closest(".order");
-          if (!$parent.length) {
-            restore($(this).data("id"));
-            $(this).remove();
-            totalPrice -= price;
-            updateTotalPrice();
-          }
-        }
-      });
-
-      totalPrice += price;
-      updateTotalPrice();
+      $orig.css("opacity", 0.5).draggable("disable")
     }
   });
 
-  $("body").droppable({
+  $("body").droppable({ // 클론 드래그해서 삭제하기
     accept: ".cloned",
     drop(event, ui) {
       const $cloned = ui.draggable;
-      restore($cloned.data("id"));
-      totalPrice -= parseInt($cloned.find("li").last().text().replace(/[^0-9]/g, ""), 10);
-      updateTotalPrice();
+      const id = $cloned.attr("data-id");
+
+      restore(id);
       $cloned.remove();
     }
   });

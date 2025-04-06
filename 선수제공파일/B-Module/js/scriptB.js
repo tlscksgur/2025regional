@@ -48,7 +48,6 @@ function imgChange() {
 
   images.forEach((e, index) => {
     e.addEventListener("mouseenter", () => {
-      console.log("wwww");
       images.forEach(imgs => {
         imgs.style.backgroundImage = `url(B-ModuleImg/${e.className}.jpg)`
 
