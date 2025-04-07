@@ -4,15 +4,15 @@ function drag() {
   }
 
   $(`.exhibition .proitemall`).each((i, e)=>{
-    $(e).attr("data-id", `$or-${i}`).draggable({
+    $(e).attr("data-id", `or-${i}`).draggable({
       helper: "clone"
     })
   })
 
   $(".order").droppable({
-    accept: ".exhibition .proitemall:not(.cloned)",
-    drop(event,ui){
-      const $or = ui.draggable
+    accept: ".exhibition .proitemall:not(cloned)",
+    drop(event, ui){
+      const $or = ui.draggable 
       const id = $or.attr("data-id")
       const $clone = $or.clone()
 
@@ -22,13 +22,13 @@ function drag() {
       .appendTo(this)
       .draggable()
 
-      $or.css("opacity", 0.3).draggable("disable")
+      $or.css("opacity", 0.4).draggable("disable")
     }
   })
 
   $("body").droppable({
     accept: ".cloned",
-    drop(event,ui){
+    drop(event, ui){
       const $cloned = ui.draggable
       const id = $cloned.attr("data-id")
 

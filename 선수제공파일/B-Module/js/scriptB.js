@@ -13,15 +13,15 @@ function video() {
       }
     })
 
-    document.getElementById("play").addEventListener("click", () => { video.play() })
-    document.getElementById("stop").addEventListener("click", () => { video.pause() })
-    document.getElementById("pause").addEventListener("click", () => { video.pause(); video.currentTime = 0 })
-    document.getElementById("back").addEventListener("click", () => { video.currentTime -= 10 })
-    document.getElementById("fast").addEventListener("click", () => { video.currentTime += 10 })
-    document.getElementById("speedDown").addEventListener("click", () => { video.playbackRate -= 0.1 })
-    document.getElementById("speedUp").addEventListener("click", () => { video.playbackRate += 0.1 })
-    document.getElementById("reset").addEventListener("click", () => { video.playbackRate = 1 })
-    document.getElementById("repeat").addEventListener("click", () => { video.loop = !video.loop })
+    document.getElementById("play").addEventListener("click", () => {video.play()})
+    document.getElementById("stop").addEventListener("click", () => {video.pause()})
+    document.getElementById("pause").addEventListener("click", () => {video.pause(); video.currentTime = 0})
+    document.getElementById("back").addEventListener("click", () => {video.currentTime -= 10})
+    document.getElementById("fast").addEventListener("click", () => {video.currentTime += 10})
+    document.getElementById("speedDown").addEventListener("click", () => {video.playbackRate -= 0.1})
+    document.getElementById("speedUp").addEventListener("click", () => {video.playbackRate += 0.1})
+    document.getElementById("reset").addEventListener("click", () => {video.playbackRate = 1})
+    document.getElementById("repeat").addEventListener("click", () => {video.loop = !video.loop})
 
     auto.addEventListener("change", () => {
       localStorage.setItem("autoplay", auto.checked)

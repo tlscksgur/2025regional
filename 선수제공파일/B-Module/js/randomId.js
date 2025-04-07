@@ -1,8 +1,18 @@
-let numbers = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"].join("").split("")
-const id = document.querySelector("#guest-id")
+function randomId() {
+  const open = document.querySelector(".open")
 
+  open.addEventListener("click", ()=>{
+    let numbers = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"].join("").split("")
+    const guestId = document.getElementById("guest-id")
+    let re = ""
 
-for (let i = 0; i <= 5; i++) {
-  let random = Math.floor(Math.random() * numbers.length)
-  id.innerHTML += numbers[random]
+    for (let i = 0; i <= 5; i++) {
+      let random = Math.floor(Math.random() * numbers.length)
+      guestId.innerHTML += numbers[random]
+      re += numbers[random]
+    }
+    guestId.innerHTML = re
+  })
 }
+
+randomId()

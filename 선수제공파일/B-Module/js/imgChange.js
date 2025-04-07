@@ -20,7 +20,9 @@ function imgChange() {
   });
 
   e.addEventListener("mouseleave", ()=> {
-    
+    images.forEach(item=> {
+        item.style.backgroundImage = `url(./${item}.jpg)`
+      });
   })
 }
 

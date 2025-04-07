@@ -80,16 +80,22 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 
 
 @keyframes move {
-  0% {transform: translateX(0px);}
-  15% {transform: translateX(0px);}
-  25% {transform: translateX(-1920px);}
-  40% {transform: translateX(-1920px);}
-  50% {transform: translateX(-3840px);}
-  65% {transform: translateX(-3840px);}
-  75% {transform: translateX(-5760px);}
-  99.999% {transform: translateX(-5760px);}
-  100% {transform: translateX(-7680px);}
+  0%{transform: translateX(0);}
+  30%{transform: translateX(0%);}
+  33%{transform: translateX(-100vw);}
+  63%{transform: translateX(-100vw);}
+  66%{transform: translateX(-200vw);}
+  96%{transform: translateX(-200vw);}
+  99%{transform: translateX(-300vw);}
+  99.99999999%{transform: translateX(-300vw);}
+  100%{transform: translateX(0);}
+  
+
+
+  
 }
+
+
 
 .slide>ul:hover{animation-play-state: paused;}
 
