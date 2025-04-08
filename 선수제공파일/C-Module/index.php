@@ -22,11 +22,10 @@ require_once "db.php";
     <div class="login-modal">
       <h2>로그인</h2>
       <form action="login.php" method="post">
-        <input type="text" name="lgid" id="loginid" placeholder="id" autofocus required>
-        <input type="password" name="lgpw" id="loginpw" placeholder="pw" required>
-
-        <button id="loginbtn">로그인</button>
-        <a href="#" class="quit">나가기</a>
+        <input type="text" id="loginid" name="lgid" require placeholder="id" autofocus>
+        <input type="text" id="loginpw" name="lgpw" require placeholder="pw">
+        <button type="submit">로그인</button>
+        <a href="#" class="quit">닫기</a>
       </form>
     </div>
   </div>
@@ -66,7 +65,7 @@ require_once "db.php";
         <div class="php-flex">
           <?php session_start() ?>
           <ul class="ul2">
-            <?php if ((isset($_SESSION['ss']) && $_SESSION['ss']) || (isset($_SESSION['ad']) && $_SESSION['ad'])): ?>
+          <?php if ((isset($_SESSION['ss']) && $_SESSION['ss']) || (isset($_SESSION['ad']) && $_SESSION['ad'])): ?>
               <li>
                 <?php if (isset($_SESSION['ss']) && $_SESSION['ss']): ?>
                   <?php echo ($_SESSION['ss']->id) . "님" ?>

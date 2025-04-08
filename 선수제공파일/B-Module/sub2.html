@@ -112,47 +112,38 @@
     <div class="video-box">
       <video src="./AD.mp4"></video>
 
-    <div class="video-ctl">
-      <button>컨트롤러보이기 숨기기</button>
-      <input type="checkbox" name="btn1" id="play" hidden>
-      <input type="checkbox" name="btn2" id="stop" hidden>
-      <input type="checkbox" name="btn3" id="pause" hidden>
-      <input type="checkbox" name="btn4" id="back" hidden>
-      <input type="checkbox" name="btn5" id="fast" hidden>
-      <input type="checkbox" name="btn6" id="speedDown" hidden>
-      <input type="checkbox" name="btn7" id="speedUp" hidden>
-      <input type="checkbox" name="btn8" id="reset" hidden>
-      <input type="checkbox" name="btn10" id="repeat" hidden>
-      <input type="checkbox" name="btn11" id="autoplay" hidden>
-    </div>
+      <div class="video-input">
+        <button class="btn-hidden">컨트롤러 보이기/숨기기</button>
+        <input type="checkbox" id="play" hidden>
+        <input type="checkbox" id="stop" hidden>
+        <input type="checkbox" id="pause" hidden>
+        <input type="checkbox" id="back" hidden>
+        <input type="checkbox" id="fast" hidden>
+        <input type="checkbox" id="speedDown" hidden>
+        <input type="checkbox" id="speedUp" hidden>
+        <input type="checkbox" id="reset" hidden>
+      </div>
 
-    <div class="control-btn-box">
-      <label for="play">재생</label>
-      <label for="stop">일시정지</label>
-      <label for="pause">정지</label>
-      <label for="back">되감기 10s</label>
-      <label for="fast">빨리감기 10s</label>
-      <label for="speedDown">감속하기 0.1</label>
-      <label for="speedUp">배속하기 0.1</label>
-      <label for="reset">배속 원래대로 돌리기</label>
-      <label for="repeat">반복 켜기/끄기</label>
-      <label for="autoplay">자동재생 켜기/끄기</label>
+      <div class="video-btn">
+        <label for="play" id="btn1">재생</label>
+        <label for="stop" id="btn2">일시정지</label>
+        <label for="pause" id="btn3">정지</label>
+        <label for="back" id="btn4">되감기(10초씩)</label>
+        <label for="fast" id="btn5">빨리감기(10초씩)</label>
+        <label for="speedDown" id="btn6">감속하기(0.1배씩)</label>
+        <label for="speedUp" id="btn7">배속하기(0.1배씩)</label>
+        <label for="reset" id="btn8">배속 원래대로 돌리기</label>
+        
+        <input type="checkbox" id="replay" hidden>
+        <label for="replay" id="btn9">반복 켜기/끄기</label>
+        <input type="checkbox" id="auto" hidden>
+        <label for="auto" id="btn10">자동재생 켜기/끄기</label>
+      </div>
     </div>
-  </div>
+  </section>
 
-
-    <div class="all-product">
-      <ul>
-        <li></li>
-        <li><img src="" alt=""></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
-    <div class="no-member-btn">
-      <button class="open">비회원구매</button>
-    </div>
+  <section>
+    <button class="open">비회원주문</button>
   </section>
 
   <footer>
