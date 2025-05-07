@@ -6,7 +6,6 @@
 @font-face {
   font-family: font;
   src: url("../../공통/fontawesome/fonts/fontawesome-webfont.ttf");
-  src: url("/2025regional-main/선수제공파일/A-Module/font/fontawesome-webfont.ttf");
 }
 
 .container{
@@ -23,24 +22,16 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 .dropdown>ul{display: flex; justify-content: space-between; width: 400px;}
 
 .sub{height: 0px; overflow: hidden; transition: .3s;}
+.sub > li:hover a{background-color: blue;} /*  */
+
 .dropdown>ul:hover .sub{height: 150px;}
 
-.dropdown>ul>li:hover > a{background-color: #003cff;}
-.dropdown>ul>li:hover .sub a{background-color: #01810b;}
+.dropdown>ul>li:hover a{background-color: rgb(247, 98, 44);}
 
-.dropdown>ul>li>a{display: block; width: 100px; height: 45px; text-align: center;}
+.dropdown>ul>li>a{display: block; width: 100px; height: 45px; text-align: center; line-height: 45px;}
 .dropdown>ul>li>ul>li>a{display: block; width: 100px; height: 50px; text-align: center; line-height: 50px; background-color: rgba(128, 128, 128, 0.76);}
 
-.ul1 a{transition: .2s;}
-.ul1 a:hover{color: #ff4500;}
-.ul1{width: 350px; display: flex; justify-content: space-between;}
 .ul2{width: 300px; display: flex; justify-content: space-between;}
-
-
-.ul1 li{color: #fff; transition: .2s;}
-.ul2 li{color: #fff;}
-
-.ul1 li{color: #fff;}
 .ul2 li{color: #fff;}
 
 .ul1 li{transition: .2s;}
