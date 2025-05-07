@@ -5,11 +5,8 @@
 
 @font-face {
   font-family: font;
-<<<<<<< HEAD
   src: url("../../공통/fontawesome/fonts/fontawesome-webfont.ttf");
-=======
   src: url("/2025regional-main/선수제공파일/A-Module/font/fontawesome-webfont.ttf");
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 }
 
 .container{
@@ -21,7 +18,7 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 .header-logo img{width: 140px;}
 .header-in{width: 100%; height: 90px; display: flex; justify-content: space-around; align-items: center;}
 
-<<<<<<< HEAD
+
 .dropdown{height: 20px;}
 .dropdown>ul{display: flex; justify-content: space-between; width: 400px;}
 
@@ -33,43 +30,30 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
 
 .dropdown>ul>li>a{display: block; width: 100px; height: 45px; text-align: center;}
 .dropdown>ul>li>ul>li>a{display: block; width: 100px; height: 50px; text-align: center; line-height: 50px; background-color: rgba(128, 128, 128, 0.76);}
-=======
-.drophover{position: absolute; height: 0; overflow: hidden; width: 70px;  text-align: center; line-height: 40px; background-color: rgba(128, 128, 128, 0.411);  transition: .3s;}
-.drop:hover .drophover{height: 85px;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 
 .ul1 a{transition: .2s;}
 .ul1 a:hover{color: #ff4500;}
 .ul1{width: 350px; display: flex; justify-content: space-between;}
 .ul2{width: 300px; display: flex; justify-content: space-between;}
 
-<<<<<<< HEAD
+
 .ul1 li{color: #fff; transition: .2s;}
 .ul2 li{color: #fff;}
 
-=======
 .ul1 li{color: #fff;}
 .ul2 li{color: #fff;}
 
 .ul1 li{transition: .2s;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 .ul1 li:nth-child(1):hover{color: orangered;}
 .ul1 li:nth-child(2):hover{color: orangered;}
 .ul1 li:nth-child(3):hover{color: orangered;}
 .ul1 li:nth-child(4):hover{color: orangered;}
 
 .ul2 li{transition: .2s;}
-<<<<<<< HEAD
 .ul2 li:nth-child(1){width: 60px; height: 27px; background-color: #ff5722; text-align: center; line-height: 27px; border-radius: 8px;}
 .ul2 li:nth-child(2){width: 85px; height: 27px; background-color: #ff5722; text-align: center; line-height: 27px; border-radius: 8px;}
 .ul2 li:nth-child(3){width: 85px; height: 27px; background-color: #ff5722; text-align: center; line-height: 27px; border-radius: 8px;}
 .ul2 li:nth-child(4){width: 60px; height: 27px; background-color: #ff5722; text-align: center; line-height: 27px; border-radius: 8px;}
-=======
-.ul2 li:nth-child(1){width: 60px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
-.ul2 li:nth-child(2){width: 70px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
-.ul2 li:nth-child(3){width: 70px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
-.ul2 li:nth-child(4){width: 60px; height: 25px; background-color: #ff5722; text-align: center; line-height: 25px; border-radius: 8px;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 
 .ul2 li:nth-child(1):hover{color: gold;}
 .ul2 li:nth-child(2):hover{color: rgb(119, 247, 69);}
@@ -120,13 +104,6 @@ header{position: fixed; z-index: 1; background-color: rgba(128, 128, 128, 0.562)
   99%{transform: translateX(-300vw);}
   99.99999999%{transform: translateX(-300vw);}
   100%{transform: translateX(0);}
-<<<<<<< HEAD
-=======
-  
-
-
-  
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 }
 
 
@@ -146,11 +123,7 @@ h1{width: 90%; text-align: center;}
 
 .label-all{margin-left: 200px;}
 
-<<<<<<< HEAD
 label{display: inline-block; width: 80px; height: 32px; border-radius: 5px; background-color: lightcoral; margin-top: 30px; text-align: center; line-height: 30px; transition: .3s; font-weight: bold; color:#fff;}
-=======
-label{display: inline-block; width: 70px; height: 32px; border-radius: 5px; background-color: lightcoral; margin-top: 30px; text-align: center; line-height: 30px; transition: .3s; font-weight: bold; color:#fff;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 label:hover{cursor: pointer; background-color: rgb(250, 90, 90);}
 
 /* ----------판매상품 체크------------- */
@@ -193,11 +166,7 @@ box-shadow: -4px 5px 10px 0px #c4c4c4;}
 
 .banner-section{background-color: #fff;}
 
-<<<<<<< HEAD
 .partnership{display: flex; justify-content: space-evenly; margin: 3% auto; padding-top: 80px; width: 1400px; position: relative;}
-=======
-.partnership{display: flex; justify-content: space-evenly; margin: 3% auto; padding-top: 45px; width: 1400px; position: relative;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 
 .partner1{width: 300px; height: 400px; text-align: center; line-height: 40px; border-radius: 10px; transition: .3s ease; box-shadow: 2px 4px 10px rgba(140,150,198,0.1); position: relative;}
 .partner1:hover{height: 440px; box-shadow: 15px 15px 15px rgba(140,150,198,0.3); margin-top: -40px;}
@@ -259,11 +228,8 @@ color: gray; opacity: .2;}
 transform: translateY(-8px);}
 
 /* ----------푸터------------ */
-<<<<<<< HEAD
 footer{width: 1920px; margin-top: 50px; padding: 20px; height: 555px;
-=======
-footer{width: 1920px; margin-top: 50px; padding: 40px; height: 525px;
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
+
 background: linear-gradient(rgba(255, 68, 0, 0.418),rgba(250, 109, 109, 0.699), rgb(255, 156, 173));
 box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418);}
 .footer-in{width: 1100px; margin: 0 auto;}
@@ -278,11 +244,8 @@ box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418);}
 .footer-txt1{color: #2E1A00;}
 .footer-txt2{display: flex; justify-content: center; margin: 15px 0 15px 0; color: #2E1A00;}
 
-<<<<<<< HEAD
 .footer-content3{display: flex; margin-top: 8px;}
-=======
-.footer-content3{display: flex;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
+
 .footer-content3 > ul li{line-height: 27px;}
 
 .footer-content4{display: flex;}
@@ -294,7 +257,6 @@ box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418);}
 
 .footer-sns ul{display: flex; justify-content: space-between; align-items: center; width: 150px; height: 80px;}
 
-<<<<<<< HEAD
 .copyright{text-align: center; border-top: 1px solid rgba(250, 91, 51, 0.397); padding-top: 10px;}
 
 #chrome{transition: .2s;}
@@ -308,9 +270,6 @@ box-shadow: 0px 0px 5px 13px rgba(255, 68, 0, 0.418);}
 #github:hover{color: rgb(114, 1, 114);}
 #instagram:hover{color: rgb(255, 182, 194);}
 #twitter:hover{color: skyblue;}
-=======
-.copyright{text-align: center; border-top: 1px solid rgba(250, 91, 51, 0.397); padding-top: 15px;}
->>>>>>> 8f9bc1ed4fbbfca84946fcd6656a7a2e540ebb00
 
 /* ---------------footer---------------- */
 
