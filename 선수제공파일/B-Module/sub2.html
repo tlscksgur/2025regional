@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../B-Module/font/font-awesome.min.css">
+  <link rel="stylesheet" href="css/sub2.css">
+  <title>소개</title>
+</head>
+
+<dialog>
+  <div class="modal-box">
+    <div class="content1">
+      <div class="information">회원정보영역 - <span id="guest-id"></span></div>
+      <div class="exhibition">
+        <ul class="proitem1 proitemall">
+          <li>상품명 이뮨 멀티비타민&amp;미네랄</li>
+          <li><img src="./img/건강식품/1.PNG" alt="상품명 이뮨 멀티비타민&amp;미네랄" class="product-item-img"></li>
+          <li class="price">가격: 65,000</li>
+        </ul>
+
+        <ul class="proitem2 proitemall">
+          <li>센트룸</li>
+          <li><img src="./img/건강식품/2.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 27,000원</li>
+        </ul>
+
+        <ul class="proitem3 proitemall">
+          <li>닥터브라이언</li>
+          <li><img src="./img/건강식품/3.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 2,000원</li>
+        </ul>
+
+        <ul class="proitem4 proitemall">
+          <li>액티브 멀티포맨</li>
+          <li><img src="./img/건강식품/4.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 30,000원</li>
+        </ul>
+
+        <ul class="proitem5 proitemall">
+          <li>네이처메이드B12</li>
+          <li><img src="./img/건강식품/5.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 30,000원</li>
+        </ul>
+        
+        <ul class="proitem6 proitemall">
+          <li>PANTONE PD충전 보조배터리</li>
+          <li><img src="./img/디지털/2.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 24,400원</li>
+        </ul>
+        
+        <ul class="proitem7 proitemall">
+          <li>Bowie D05 무선 블루투스 5.3 헤드셋 </li>
+          <li><img src="./img/디지털/3.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 36,900원</li>
+        </ul>
+        
+        <ul class="proitem8 proitemall">
+          <li>독거미 F99 기계식 키보드</li>
+          <li><img src="./img/디지털/2.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 70,750원</li>
+        </ul>
+        
+        <ul class="proitem9 proitemall">
+          <li>파이널마우스 스타라이트12 페가수스 미디엄</li>
+          <li><img src="./img/디지털/4.jpg" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 1,128,600원</li>
+        </ul>
+        
+        <ul class="proitem9 proitemall">
+          <li>보이저5200 블루투스 이어폰</li>
+          <li><img src="./img/디지털/5.PNG" alt="상품명 파이널마우스 스타라이트12 페가수스 미디엄" class="product-item-img"></li>
+          <li class="price">가격: 146,000원</li>
+        </ul>
+      </div>
+    </div>
+    <div class="content2">
+      <div class="order">주문영역</div>
+      <div class="payment">총 결제금액: <span id="total-price">0</span>원</div>
+      <button class="confirm">주문하기</button>
+    </div> 
+    <a class="close">X</a>
+  </div>
+</dialog>
+
+<body>
+  <header>
+    <div class="header-in">
+      <div class="header-logo"><a href="index.html"><img src="./img/slideImg/logo.png" alt="header-logo"></a></div>
+      <div class="ul1">
+        <div class="maindrop"><a href="../B-Module/sub1.html">소개</a></div>
+        <div class="drop"><a href="#">판매상품</a>
+          <ul class="drophover">
+            <li><a href="./sub2.html">전체상품</a></li>
+            <li><a href="./sub3.html">인기상품</a></li>
+          </ul>
+        </div>
+        <div><a href="#">가맹점</a></div>
+        <div><a href="./sub4.html">장바구니</a></div>
+      </div>
+      <ul class="ul2">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">장바구니</a></li>
+        <li><a href="#">관리자</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section>
+    <div class="video-box">
+      <video src="./AD.mp4"></video>
+
+      <div class="video-input">
+        <button class="btn-hidden">컨트롤러 보이기/숨기기</button>
+        <input type="checkbox" id="play" hidden>
+        <input type="checkbox" id="stop" hidden>
+        <input type="checkbox" id="pause" hidden>
+        <input type="checkbox" id="back" hidden>
+        <input type="checkbox" id="fast" hidden>
+        <input type="checkbox" id="speedDown" hidden>
+        <input type="checkbox" id="speedUp" hidden>
+        <input type="checkbox" id="reset" hidden>
+      </div>
+
+      <div class="video-btn">
+        <label for="play" id="btn1">재생</label>
+        <label for="stop" id="btn2">일시정지</label>
+        <label for="pause" id="btn3">정지</label>
+        <label for="back" id="btn4">되감기(10초씩)</label>
+        <label for="fast" id="btn5">빨리감기(10초씩)</label>
+        <label for="speedDown" id="btn6">감속하기(0.1배씩)</label>
+        <label for="speedUp" id="btn7">배속하기(0.1배씩)</label>
+        <label for="reset" id="btn8">배속 원래대로 돌리기</label>
+        
+        <input type="checkbox" id="replay" hidden>
+        <label for="replay" id="btn9">반복 켜기/끄기</label>
+        <input type="checkbox" id="auto" hidden>
+        <label for="auto" id="btn10">자동재생 켜기/끄기</label>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <button class="open">비회원주문</button>
+  </section>
+
+  <footer>
+    <div class="footer-in">
+      <div class="footer-logo"><img src="./img/slideImg/logo.png" alt="footer-logo">
+        <p class="footer-logo-txt"></p>
+      </div>
+      <div class="footer-content1">
+        <div class="number">
+          <p>고객센터 이용안내</p>
+          <p>온라인몰 고객센터 1580-8282</p>
+          <p>매장고객센터 1577-8254</p>
+          <p>고객센터 운영시간 [평일 09:00 - 18:00]</p>
+        </div>
+        <div class="footer-txt1">
+          <p>주말 및 공휴일은 1:1문의하기를 이용해주세요.<br>
+            업무가 시작되면 바로 처리해드립니다.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-content2">
+        <div class="footer-txt2">
+          <ul>
+            <li>(주)GIFTS:Mall | 사업자등록번호 : 809-81-01157 | 대표이사 황기영</li>
+            <li>주소 : 서울특별시 용산구 한강대로 123, 40층 </li>
+            <li>본사 대표전화 : 02-123-4567 | GIFTS:Mall 가맹상담전화 : 02-123-4568</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-content3">
+        <ul>
+          <li>지방은행구매안전서비스</li>
+          <li>IFTS:Mall은 현금 결제한 금액에 대해 지방은행과 채무지급보증</li>
+          <li>계약을체결하여 안전한 거래를 보장하고 있습니다</li>
+          <a href="#" class="highright">서비스 가입사실 확인 ></a>
+        </ul>
+      </div>
+
+      <div class="footer-content4">
+        <div class="footer-link">
+          <ul>
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">이용약관.법적고지</a></li>
+            <li><a href="#">청소년보호방침</a></li>
+            <li><a href="#">이메일무단수집거부</a></li>
+            <li><a href="#">사이트맵</a></li>
+            <li><a href="#">채용</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-sns">
+          <ul>
+            <li><a href="#" class="fa-chrome"></a></li>
+            <li><a href="#" class="fa-facebook-square"></a></li>
+            <li><a href="#" class="fa-github"></a></li>
+            <li><a href="#" class="fa-instagram"></a></li>
+            <li><a href="#" class="fa-twitter"></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>COPYRIGHTⓒ 2024 GIFTS:MALL KOREA INC. ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="./js/draganddrop.js"></script>
+  <script src="./js/randomId.js"></script>
+  <script src="./js/scriptB.js"></script>
+  <script src="./js/scriptA.js"></script>
+</body>
+</html>

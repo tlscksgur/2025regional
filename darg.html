@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비회원 주문</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        dialog { position: fixed; inset: 0; width: 100%; height: 100%; background: rgba(128, 128, 128, 0.5); }
+        .modal-box { display: flex; justify-content: space-around; width: 1300px; height: 770px; margin: 5% auto; background: #429aff; }
+        .content1, .content2 { display: flex; flex-direction: column; justify-content: space-around; width: 50%; }
+        .box { border: 1px solid; padding: 10px; background: white; }
+        .product { cursor: grab; padding: 10px; background: lightgray; margin: 5px; }
+        .order .product { display: flex; justify-content: space-between; }
+        .close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 20px; }
+    </style>
+</head>
+<body>
+
+    <button class="open">비회원 주문</button>
+
+    <dialog>
+        <div class="modal-box">
+            <div class="content1">
+                <div class="box">회원정보영역 - <span id="guest-id"></span></div>
+                <div class="box exhibition">
+                    <div class="product" data-price="1000">🍎 사과 - 1000원</div>
+                    <div class="product" data-price="2000">🍌 바나나 - 2000원</div>
+                    <div class="product" data-price="3000">🍇 포도 - 3000원</div>
+                </div>
+            </div>
+            <div class="content2">
+                <div class="box order">주문영역</div>
+                <div class="box payment">총 결제금액: <span id="total-price">0</span>원</div>
+                <button class="confirm">주문하기</button>
+            </div>
+        </div>
+        <span class="close">X</span>
+    </dialog>
+
+    <div id="order-message"></div>
+
+    <script>
+        $(function () {
+            let totalPrice = 0;
+
+            function updateTotal() {
+                $("#total-price").text(totalPrice);
+            }
+
+            $(".open").click(() => {
+                $("#guest-id").text(Math.random().toString(36).substr(2, 6).toUpperCase());
+                $("dialog")[0].showModal();
+                $(".product").draggable({ helper: "clone", revert: "invalid" });
+            });
+
+            $(".close").click(() => $("dialog")[0].close());
+
+            $(".order").droppable({
+                accept: ".product",
+                drop: function (event, ui) {
+                    let item = ui.helper.clone();
+                    let price = parseInt(item.data("price"));
+
+                    item.append(`<span class="remove">❌</span>`);
+                    $(".order").append(item);
+                    ui.helper.addClass("dropped");
+
+                    totalPrice += price;
+                    updateTotal();
+                }
+            });
+
+            $(".order").on("click", ".remove", function () {
+                let price = parseInt($(this).parent().data("price"));
+                totalPrice -= price;
+                updateTotal();
+                $(this).parent().remove();
+            });
+
+            $(".confirm").click(() => {
+                $("dialog")[0].close();
+                $("#order-message").text(`방금 비회원 ${$("#guest-id").text()}님이 ${totalPrice}원을 결제하셨습니다!`)
+                    .fadeIn().delay(3000).fadeOut();
+            });
+        });
+    </script>
+
+</body>
+</html>
