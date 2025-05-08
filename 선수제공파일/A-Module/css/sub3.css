@@ -48,7 +48,12 @@ section{width: 100%; height: 800px;}
 
 .popu{display: flex; margin-top: 100px;}
 .ss{width: 350px; height: 500px; border: 1px solid;}
-.box img{width: 200px;}
+
+.title{font-size: 20px; text-align: center;}
+.content{font-size: 16px;}
+.txt li:nth-child(1){font-size: 15px; text-align: center;}
+body > section > div.popu > div.item2.item-all.all-product > div > ul > li:nth-child(1){font-size: 10px;}
+.box img{width: 348px; height: 200px;}
 
 .all-product{display: flex; flex-wrap: wrap; justify-content: center; align-items: center; width: 100%; height: 100%;}
 .all-product > ul{display: flex; flex-direction: column;
